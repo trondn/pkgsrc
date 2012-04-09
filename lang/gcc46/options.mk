@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.4 2012/01/14 02:09:36 hans Exp $
+# $NetBSD: options.mk,v 1.6 2012/04/08 05:04:46 sbd Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.gcc46
 PKG_SUPPORTED_OPTIONS=	nls gcc-c++ gcc-fortran gcc-java gcc-objc #gcc-ada

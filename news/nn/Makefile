@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.37 2010/03/13 05:05:51 obache Exp $
+# $NetBSD: Makefile,v 1.40 2012/04/07 22:49:54 dholland Exp $
 
 DISTNAME=	nn-6.7.3
 CATEGORIES=	news
@@ -9,9 +9,12 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.nndev.org/
 COMMENT=	NN newsreader
 
+PKG_DESTDIR_SUPPORT=	user-destdir
+
 PKG_SYSCONFSUBDIR=	nntp
 
 .include "../../mk/bsd.prefs.mk"
+.include "../../mk/compiler.mk"
 
 .if ${OPSYS} == "SunOS"
 SFILE=		s-sunos5.h
@@ -29,7 +32,7 @@ MFILE=         m-mipsel.h
 MFILE=		m-${LOWER_ARCH}.h
 .endif
 
-.if ${OPSYS} == "DragonFly"
+.if ${OPSYS} == "DragonFly" || !empty(CC_VERSION:Mgcc*)
 CPP+=		-traditional
 .endif
 
@@ -53,5 +56,11 @@ post-patch:
 	@${CP} ${FILESDIR}/m-powerpc.h ${WRKSRC}/conf/m-powerpc.h
 	@${CP} ${FILESDIR}/m-x86_64.h ${WRKSRC}/conf/m-x86_64.h
 	@${CP} ${WRKSRC}/conf/m-m680x0.h ${WRKSRC}/conf/m-m68k.h
+
+SUBST_CLASSES+=		fix-dest
+SUBST_STAGE.fix-dest=	post-build
+SUBST_SED.fix-dest=	-e 's,${PREFIX},${DESTDIR}${PREFIX},'
+SUBST_FILES.fix-dest=	inst
+
 
 .include "../../mk/bsd.pkg.mk"
