@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.878 2012/03/22 14:53:57 taca Exp $
+# $NetBSD: Makefile,v 1.881 2012/04/13 18:54:04 ryoon Exp $
 #
 
 COMMENT=	Packages related to the World Wide Web
@@ -78,6 +78,7 @@ SUBDIR+=	apache-tomcat6
 SUBDIR+=	apache-tomcat7
 SUBDIR+=	apache2
 SUBDIR+=	apache22
+SUBDIR+=	apache24
 SUBDIR+=	apachetop
 SUBDIR+=	asp2php
 SUBDIR+=	august
@@ -118,6 +119,7 @@ SUBDIR+=	cvsweb
 SUBDIR+=	dansguardian
 SUBDIR+=	davical
 SUBDIR+=	dillo
+SUBDIR+=	dojo
 SUBDIR+=	drivel
 SUBDIR+=	drraw
 SUBDIR+=	drupal6
@@ -172,6 +174,7 @@ SUBDIR+=	libmediawiki
 SUBDIR+=	libmicrohttpd
 SUBDIR+=	libproxy
 SUBDIR+=	librest
+SUBDIR+=	librest07
 SUBDIR+=	libwww
 SUBDIR+=	liferea
 SUBDIR+=	liferea-current

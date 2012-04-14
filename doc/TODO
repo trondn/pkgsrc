@@ -1,4 +1,4 @@
-$NetBSD: TODO,v 1.10993 2012/04/09 09:20:14 adam Exp $
+$NetBSD: TODO,v 1.11001 2012/04/13 19:18:57 adam Exp $
 
 Suggested new packages
 ======================
@@ -380,7 +380,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o ap-xslt-1.4.0
 	o ap2-auth-ldap-3.11
 	o ap2-transform-0.6.0
-	o apache-2.4.1
 	o apache-maven-3.0
 	o applewmproto-1.4.2
 	o appres-1.0.3 [pkg/45526]
@@ -389,7 +388,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o aqsis-1.6.0
 	o aranym-0.9.12
 	o argtable-2.9
-	o aria2-1.14.2
+	o aria2-1.15.0
 	o arirang-1.70
 	o arla-0.90
 	o arnold-20040104
@@ -448,6 +447,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o cal3d-0.11.0
 	o calamaris-2.59
 	o calibre-0.8.46
+	o calligra-2.4.0 [koffice successor]
 	o cardboard-schedule-1.14c [at http://www.bright-green.com/downloads/]
 	o cc65-2.13.3
 	o cddbd-1.5.2
@@ -517,7 +517,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o desktop-file-utils-0.20
 	o dgen-1.30
 	o dhid-5.3
-	o diffpdf-1.9.2
 	o diffstat-1.55
 	o dinotrace-9.3e
 	o dinotrace-mode-9.3e
@@ -804,7 +803,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o imake-1.0.5
 	o imapfilter-2.5.2
 	o imapsync-1.452
-	o imp-5.0.19
+	o imp-5.0.20
 	o ingo-2.0.7
 	o inputproto-2.2
 	o inspircd-1.2.1
@@ -840,6 +839,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o kdbg-2.5.1
 	o kde4-4.8.2
 	o kdenlive-0.8.2.1
+	o kdevelop-4.3.0
 	o kdrill-6.5
 	o kid3-2.0.1
 	o kismet-2011.03r2 [pkg/45692]
@@ -920,6 +920,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o libltdl-2.4
 	o libmatheval-1.1.6
 	o libmcs-0.7.2
+	o libmemcached-1.0.6
 	o libmilter-8.14.5
 	o libmusicbrainz-4.0.0
 	o libnasl-2.3.1
@@ -927,7 +928,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o libnids-1.24
 	o libnotify-0.7.1
 	o liboobs-2.32.0 [GNOME 2.32]
-	o libpciaccess-0.13
+	o libpciaccess-0.13.1
 	o libplist-1.8
 	o libproxy-0.4.6
 	o libquantum-1.1.0 [pkg/43728, development release]
@@ -1007,7 +1008,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o mp3diags-1.1.18
 	o mpeg4ip-1.6.1
 	o mpfr-3.1.0
-	o mpg123-1.13.7
+	o mpg123-1.13.8
 	o mpich-1.4.1p1
 	o mpop-1.0.26
 	o mserv-devel-0.41
@@ -1034,7 +1035,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o newmail-1.0.2
 	o newt-0.52.12
 	o ng-1.4.4
-	o nginx-1.0.14
+	o nginx-1.0.15
 	o nhc98-1.22 [pkg/45318]
 	o nikto-2.0.1
 	o nmh-1.4
@@ -1048,7 +1049,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o nxtvepg-2.8.1
 	o obexftp-0.23
 	o objc-3.2.8
-	o ocamlduce-3.11.2.0
 	o ocamlnet-2.2.4
 	o ocsigen-1.1.0 [pkg/40761]
 	o octave-3.6.1
@@ -1140,7 +1140,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o pulseaudio-1.0
 	o puppet-2.7.6
 	o puzzle-9173
-	o puzzles-9448
+	o puzzles-9454
 	o pv-1.2.0
 	o pwlib-1.11.1
 	o py-FourSuite-1.0.2
@@ -1167,6 +1167,8 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o py-urwid-1.0.1
 	o py-xcbgen-1.7.1
 	o python-3.2
+	o python26-2.6.8
+	o python31-3.1.5
 	o qbrew-0.3.9
 	o qemu-1.0.1 [wip]
 	o qiv-2.2.4 [pkg/46167]
@@ -1210,14 +1212,13 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o rtcw-1.41.3
 	o rtty-4.0 [at ftp://ftp.isc.org/isc/rtty/]
 	o ruby-rb-appscript-0.6.1
-	o rudiments-0.35
+	o rudiments-0.36
 	o sabayon-2.30.1 [GNOME 2.30]
 	o sablecc-3.2
 	o sakura-3.0.0
 	o sarg-2.2.5
 	o sawfish-1.8.2
 	o saxon-9.2
-	o sbcl-1.0.55
 	o scala-2.9.1.1
 	o scapy-2.2.0
 	o scew-0.4.0
@@ -1332,7 +1333,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o trio-1.12
 	o tripwire-2.3.1 [see also pkg/22362]
 	o tsclient-0.140
-	o turba-3.0.12
+	o turba-3.0.13
 	o tuxpaint-0.9.21
 	o twelf-1.5r1
 	o twm-1.0.7
@@ -1352,7 +1353,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o uriparser-0.7.5
 	o userppp-030706
 	o utilisp-1.14
-	o vala-0.16.0
 	o valgrind-3.6.1
 	o vbetool-1.1
 	o vera-1.17
@@ -1383,7 +1383,7 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o webmin-1.580 [security]
 	o websvn-2.3.2
 	o weechat-0.3.7
-	o wesnoth-1.10.1
+	o wesnoth-1.10.2
 	o whohas-0.29
 	o windowlab-1.40
 	o windowmaker-0.95.2 [wip]

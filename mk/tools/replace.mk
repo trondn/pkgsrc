@@ -1,4 +1,4 @@
-# $NetBSD: replace.mk,v 1.246 2012/03/19 12:34:19 joerg Exp $
+# $NetBSD: replace.mk,v 1.248 2012/04/13 02:25:06 sbd Exp $
 #
 # Copyright (c) 2005 The NetBSD Foundation, Inc.
 # All rights reserved.
@@ -281,7 +281,8 @@ TOOLS_CMD.byacc=		${TOOLS_DIR}/bin/yacc
 .  endif
 .endif
 
-.for _t_ in bzip2 bzcat
+_TOOLS.bzip2=	bzip2 bzcat
+.for _t_ in ${_TOOLS.bzip2}
 .  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
 .    if !empty(PKGPATH:Marchivers/bzip2)
 MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
@@ -305,7 +306,8 @@ TOOLS_PATH.chrpath=		${TOOLS_PREFIX.chrpath}/bin/chrpath
 .  endif
 .endif
 
-.for _t_ in cmake cpack
+_TOOLS.cmake=	cmake cpack
+.for _t_ in ${_TOOLS.cmake}
 .  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
 .    if !empty(PKGPATH:Mdevel/cmake)
 MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
@@ -871,7 +873,8 @@ TOOLS_VALUE_GNU.yacc=		${TOOLS_CMDLINE.yacc}
 .  endif
 .endif
 
-.for _t_ in zip zipcloak zipnote zipsplit
+_TOOLS.zip=	zip zipcloak zipnote zipsplit
+.for _t_ in ${_TOOLS.zip}
 .  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
 .    if !empty(PKGPATH:Marchivers/zip)
 MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
@@ -895,8 +898,10 @@ _TOOLS.perl=			perl perldoc pod2html pod2man pod2text
 .  if !defined(TOOLS_IGNORE.${_t_}) && !empty(_USE_TOOLS:M${_t_})
 .    if !empty(PKGPATH:Mlang/perl5)
 MAKEFLAGS+=			TOOLS_IGNORE.${_t_}=
-.    elif !empty(_TOOLS_USE_PKGSRC.${_t_}:M[yY][eE][sS])
+.    elif !empty(_TOOLS_USE_PKGSRC.${_t_}:M[yY][eE][sS]) || \
+     !empty(DEPENDS:Mp5-*) || !empty(PERL5_PREFIX:M${PREFIX})
 .      include "../../lang/perl5/version.mk"
+_TOOLS_USE_PKGSRC.perl=		yes
 TOOLS_DEPENDS.${_t_}?=		perl>=${PERL5_REQD}:../../lang/perl5
 TOOLS_CREATE+=			${_t_}
 TOOLS_FIND_PREFIX+=		TOOLS_PREFIX.${_t_}=perl
