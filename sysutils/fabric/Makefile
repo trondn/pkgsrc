@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.18 2012/03/15 11:53:38 obache Exp $
+# $NetBSD: Makefile,v 1.20 2012/04/14 09:29:18 gls Exp $
 #
 
-VERSION=		1.3.4
+VERSION=		1.4.1
 DISTNAME=		Fabric-${VERSION}
 PKGNAME=		${DISTNAME:S/F/f/}
 PKGREVISION=		1

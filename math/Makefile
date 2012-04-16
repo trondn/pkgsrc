@@ -1,15 +1,18 @@
-# $NetBSD: Makefile,v 1.230 2012/04/08 20:53:36 wiz Exp $
+# $NetBSD: Makefile,v 1.236 2012/04/15 22:16:24 brook Exp $
 
 COMMENT=	Mathematics
 
 SUBDIR+=	R
 SUBDIR+=	R-CGIwithR
 SUBDIR+=	R-DAAG
+SUBDIR+=	R-DBI
 SUBDIR+=	R-GRASS
 SUBDIR+=	R-ISwR
 SUBDIR+=	R-PHYLOGR
 SUBDIR+=	R-R2HTML
 SUBDIR+=	R-RArcInfo
+SUBDIR+=	R-RColorBrewer
+SUBDIR+=	R-RPostgreSQL
 SUBDIR+=	R-RandomFields
 SUBDIR+=	R-Rcmdr
 SUBDIR+=	R-XML
@@ -27,6 +30,7 @@ SUBDIR+=	R-e1071
 SUBDIR+=	R-gdata
 SUBDIR+=	R-genetics
 SUBDIR+=	R-geoR
+SUBDIR+=	R-geoRglm
 SUBDIR+=	R-gstat
 SUBDIR+=	R-gtools
 SUBDIR+=	R-httpRequest
@@ -41,9 +45,12 @@ SUBDIR+=	R-randomForest
 SUBDIR+=	R-sgeostat
 SUBDIR+=	R-shapefiles
 SUBDIR+=	R-sp
+SUBDIR+=	R-spacetime
 SUBDIR+=	R-splancs
 SUBDIR+=	R-statmod
 SUBDIR+=	R-wle
+SUBDIR+=	R-xts
+SUBDIR+=	R-zoo
 SUBDIR+=	TinySVM
 SUBDIR+=	aamath
 SUBDIR+=	abs
