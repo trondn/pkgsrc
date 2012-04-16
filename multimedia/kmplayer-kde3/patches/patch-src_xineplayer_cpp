@@ -1,4 +1,4 @@
-$NetBSD: patch-src_xineplayer_cpp,v 1.2 2012/04/15 22:18:38 dholland Exp $
+$NetBSD$
 
 Fix build with xine-lib 1.2.x.
 
