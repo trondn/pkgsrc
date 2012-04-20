@@ -1,4 +1,4 @@
-$NetBSD: TODO,v 1.11018 2012/04/16 06:18:22 markd Exp $
+$NetBSD: TODO,v 1.11023 2012/04/18 20:50:30 wiz Exp $
 
 Suggested new packages
 ======================
@@ -490,7 +490,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o cryptopp-5.6.0
 	o csound5-5.13
 	o ctwm-3.8.1
-	o curl-7.25.0
 	o cvs2p4-2.5.5 [schmonz]
 	o cvsd-1.0.23
 	o cygwin_lib-1.5.24.2
@@ -654,7 +653,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o fuse-ntfs-3g-2012.1.15
 	o fvwm-2.6.0
 	o fvwm2-themes-0.7.0
-	o gajim-0.15
 	o gammu-1.30.0
 	o gap-4r4p9
 	o gated-3.6
@@ -722,7 +720,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o gnu-crypto-2.1.0
 	o gnucash-docs-2.4.1
 	o gnuchess-6.0.1
-	o gnupg2-2.0.19
 	o gnutls-3.0.18
 	o gok-2.30.1 [GNOME 2.32]
 	o golem-0.0.6
@@ -1026,7 +1023,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o newmail-1.0.2
 	o newt-0.52.12
 	o ng-1.4.4
-	o nginx-1.0.15
 	o nhc98-1.22 [pkg/45318]
 	o nikto-2.0.1
 	o nmh-1.4
@@ -1140,7 +1136,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o py-checker-0.8.19
 	o py-cups-1.9.60
 	o py-dbus-1.0.0
-	o py-django-1.4
 	o py-feedparser-5.1.1
 	o py-game-1.9.1 [needs portmidi]
 	o py-gnosis-1.2.2
@@ -1173,7 +1168,6 @@ For possible perl packages updates, see http://www.pkgbox.org/p2c/
 	o rcs-5.8
 	o rdesktop-1.7.1
 	o rdp-1.6
-	o re-alpine-2.02 [pkg/46025]
 	o recordproto-1.14.2
 	o remind-3.1.12
 	o rendercheck-1.4

@@ -1,13 +1,14 @@
-# $NetBSD: Makefile,v 1.1.1.1 2012/01/08 15:22:14 wiz Exp $
+# $NetBSD: Makefile,v 1.5 2012/04/19 16:19:52 wiz Exp $
 #
 
 DISTNAME=	notion-3-2011102900-src
 PKGNAME=	${DISTNAME:S/3-/3./:S/-src//}
+PKGREVISION=	2
 CATEGORIES=	wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=notion/}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	pkgsrc-users@NetBSD.org
+MAINTAINER=	wiz@NetBSD.org
 HOMEPAGE=	http://notion.sourceforge.net/
 COMMENT=	Tiling window manager based on ion3
 LICENSE=	ion-license AND gnu-lgpl-v2.1
@@ -18,7 +19,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 CONFLICTS=	ion3-[0-9]*
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-USE_TOOLS+=	gmake msgfmt pkg-config
+USE_TOOLS+=	gmake msgfmt pax pkg-config
 MAKE_FLAGS+=	X11_PREFIX=${BUILDLINK_PREFIX.libX11}
 
 EGDIR=		${PREFIX}/share/examples/notion
@@ -53,6 +54,9 @@ PKG_SYSCONFSUBDIR=	notion
 .for f in ${EGFILES}
 CONF_FILES+=	${EGDIR}/${f} ${PKG_SYSCONFDIR}/${f}
 .endfor
+
+post-install:
+	cd ${WRKSRC} && pax -rw contrib ${DESTDIR}${EGDIR}
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../lang/lua/buildlink3.mk"
