@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.2 2012/04/18 07:10:40 obache Exp $
+# $NetBSD: options.mk,v 1.5 2012/04/22 08:52:18 wiz Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.${GCC_PKGNAME}
 PKG_SUPPORTED_OPTIONS=	nls gcc-inplace-math gcc-c++ gcc-fortran gcc-java \
@@ -16,13 +16,16 @@ PKG_SUGGESTED_OPTIONS+= gcc-java
 ###
 ### Determine if multilib is avalible.
 ###
-MULTILIB_SUPPORTED?=	Yes
-.if !empty(MACHINE_PLATFORM:MLinux-*-x86_64) && \
-     exists(/usr/include/gnu/stubs-64.h) && \
-    !exists(/usr/include/gnu/stubs-32.h)
+MULTILIB_SUPPORTED?=	unknown
+.if !empty(MACHINE_PLATFORM:MLinux-*-x86_64)
+.  if exists(/usr/include/gnu/stubs-64.h) && \
+     !exists(/usr/include/gnu/stubs-32.h)
 MULTILIB_SUPPORTED=No
+.  else
+MULTILIB_SUPPORTED=Yes
+.  endif
 .endif
-.if empty(MULTILIB_SUPPORTED:M[Nn][Oo])
+.if !empty(MULTILIB_SUPPORTED:M[Yy][Ee][Ss])
 PKG_SUPPORTED_OPTIONS+=  gcc-multilib
 PKG_SUGGESTED_OPTIONS+=  gcc-multilib
 .endif
@@ -46,7 +49,9 @@ CONFIGURE_ARGS+=	--disable-nls
 ###
 ### Multilib Support
 ###
-.if empty(PKG_OPTIONS:Mgcc-multilib)
+.if (!empty(MULTILIB_SUPPORTED:M[Yy][Ee][Ss]) && \
+      empty(PKG_OPTIONS:Mgcc-multilib) ) || \
+    !empty(MULTILIB_SUPPORTED:M[Nn][Oo])
 CONFIGURE_ARGS+=	--disable-multilib
 .endif
 
@@ -76,6 +81,9 @@ LIBS.SunOS+=		-lgmp
 .if !empty(PKG_OPTIONS:Mgcc-objc++)
 .  if empty(PKG_OPTIONS:Mgcc-c++)
 PKG_OPTIONS+=		gcc-c++
+.  endif
+.  if empty(PKG_OPTIONS:Mgcc-objc)
+PKG_OPTIONS+=		gcc-objc
 .  endif
 LANGS+=			obj-c++
 .endif
