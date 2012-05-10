@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.531 2012/04/18 19:33:05 minskim Exp $
+# $NetBSD: Makefile,v 1.533 2012/05/08 18:42:52 minskim Exp $
 #
 
 COMMENT=	Desktop publishing
@@ -304,6 +304,8 @@ SUBDIR+=	tex-exam
 SUBDIR+=	tex-exam-doc
 SUBDIR+=	tex-excludeonly
 SUBDIR+=	tex-excludeonly-doc
+SUBDIR+=	tex-extsizes
+SUBDIR+=	tex-extsizes-doc
 SUBDIR+=	tex-fancybox
 SUBDIR+=	tex-fancybox-doc
 SUBDIR+=	tex-fancyhdr
@@ -600,6 +602,8 @@ SUBDIR+=	tex-substr
 SUBDIR+=	tex-substr-doc
 SUBDIR+=	tex-supertabular
 SUBDIR+=	tex-supertabular-doc
+SUBDIR+=	tex-svninfo
+SUBDIR+=	tex-svninfo-doc
 SUBDIR+=	tex-t2
 SUBDIR+=	tex-t2-doc
 SUBDIR+=	tex-tabls

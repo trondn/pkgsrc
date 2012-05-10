@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.12 2012/04/20 12:13:48 obache Exp $
+# $NetBSD: Makefile,v 1.14 2012/05/06 09:18:48 marino Exp $
 #
 
-DISTNAME=		scim-1.4.12
+DISTNAME=		scim-1.4.13
 CATEGORIES=		inputmethod
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scim/}
 
@@ -46,6 +46,9 @@ PTHREAD_AUTO_VARS=	yes
 .if ${OPSYS} == "SunOS"
 CONFIGURE_ENV+=		ac_cv_func_gethostbyname_r=no
 LDFLAGS.SunOS+=		-lsocket -lnsl
+.endif
+.if ${OPSYS} == "DragonFly"
+CONFIGURE_ENV+= 	gt_cv_func_gnugettext1_libintl=yes
 .endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"

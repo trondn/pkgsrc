@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.430 2012/03/26 09:27:27 markd Exp $
+# $NetBSD: Makefile,v 1.432 2012/05/07 00:02:33 jmmv Exp $
 #
 
 COMMENT=	Security tools
@@ -73,6 +73,7 @@ SUBDIR+=	gnupg
 SUBDIR+=	gnupg-pkcs11-scd
 SUBDIR+=	gnupg2
 SUBDIR+=	gnutls
+SUBDIR+=	google-authenticator
 SUBDIR+=	gpa
 SUBDIR+=	gpass
 SUBDIR+=	gpg2dot
@@ -377,6 +378,7 @@ SUBDIR+=	tct
 SUBDIR+=	tkpasman
 SUBDIR+=	tripwire
 SUBDIR+=	uvscan
+SUBDIR+=	validns
 SUBDIR+=	xml-security-c
 SUBDIR+=	xmlsec1
 SUBDIR+=	yafic

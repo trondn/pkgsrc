@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.317 2012/04/16 04:28:30 sbd Exp $
+# $NetBSD: Makefile,v 1.320 2012/05/06 13:13:17 obache Exp $
 #
 
 COMMENT=	Programming languages
@@ -26,6 +26,7 @@ SUBDIR+=	clang
 SUBDIR+=	classpath
 SUBDIR+=	classpath-gui
 SUBDIR+=	clisp
+SUBDIR+=	clojure
 SUBDIR+=	coq
 SUBDIR+=	cparser
 SUBDIR+=	cu-prolog
@@ -129,6 +130,7 @@ SUBDIR+=	pforth
 SUBDIR+=	php5
 SUBDIR+=	php5-perl
 SUBDIR+=	php53
+SUBDIR+=	picoc
 SUBDIR+=	pict
 SUBDIR+=	pnet
 SUBDIR+=	pnetC
@@ -148,6 +150,7 @@ SUBDIR+=	python25
 SUBDIR+=	python26
 SUBDIR+=	python27
 SUBDIR+=	python31
+SUBDIR+=	python32
 SUBDIR+=	racket
 SUBDIR+=	racket-textual
 SUBDIR+=	rcfunge
