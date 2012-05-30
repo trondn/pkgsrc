@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.432 2012/05/07 00:02:33 jmmv Exp $
+# $NetBSD: Makefile,v 1.434 2012/05/17 05:05:37 jnemeth Exp $
 #
 
 COMMENT=	Security tools
@@ -159,6 +159,7 @@ SUBDIR+=	nettle
 SUBDIR+=	nfsbug
 SUBDIR+=	nikto
 SUBDIR+=	oath-toolkit
+SUBDIR+=	ocaml-cryptokit
 SUBDIR+=	ocaml-ssl
 SUBDIR+=	opencdk
 SUBDIR+=	openct
@@ -177,6 +178,7 @@ SUBDIR+=	openvas-server
 SUBDIR+=	otpCalc
 SUBDIR+=	p0f
 SUBDIR+=	p11-kit
+SUBDIR+=	p5-AuthCAS
 SUBDIR+=	p5-Authen-CAS-Client
 SUBDIR+=	p5-Authen-Htpasswd
 SUBDIR+=	p5-Authen-PAM

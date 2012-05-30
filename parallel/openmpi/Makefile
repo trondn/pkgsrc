@@ -1,7 +1,6 @@
-# $NetBSD: Makefile,v 1.12 2011/12/27 23:15:35 asau Exp $
+# $NetBSD: Makefile,v 1.14 2012/05/28 18:38:17 asau Exp $
 
-DISTNAME=	openmpi-1.5.4
-PKGREVISION=	1
+DISTNAME=	openmpi-1.5.5
 CATEGORIES=	parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.5/downloads/
 EXTRACT_SUFX=	.tar.bz2
@@ -35,6 +34,13 @@ CONFIGURE_ARGS+=	OPAL_HAVE_LTDL_ADVISE=0
 BUILDLINK_TRANSFORM=	rm:-fopenmp
 
 USE_TOOLS+=		perl:run
+
+PLIST_VARS+=		vtlwraph
+.include "../../mk/bsd.prefs.mk"
+.if ${OPSYS} == "DragonFly"
+PLIST.vtlwraph= 	yes
+.endif
+
 
 .include "options.mk"
 

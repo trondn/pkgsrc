@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.620 2012/04/15 01:51:39 obache Exp $
+# $NetBSD: Makefile,v 1.622 2012/05/17 05:11:38 jnemeth Exp $
 #
 
 COMMENT=	Text processing utilities (does not include desktop publishing)
@@ -52,6 +52,7 @@ SUBDIR+=	chasen
 SUBDIR+=	chasen-base
 SUBDIR+=	cmigemo
 SUBDIR+=	coccigrep
+SUBDIR+=	colorit
 SUBDIR+=	convertlit
 SUBDIR+=	crimson
 SUBDIR+=	dadadodo
@@ -397,6 +398,7 @@ SUBDIR+=	p5-Text-Wrapper
 SUBDIR+=	p5-Text-Xslate
 SUBDIR+=	p5-Text-vCard
 SUBDIR+=	p5-Text-vFile-asData
+SUBDIR+=	p5-Unicode-LineBreak
 SUBDIR+=	p5-XML-Atom
 SUBDIR+=	p5-XML-Atom-SimpleFeed
 SUBDIR+=	p5-XML-Atom-Stream

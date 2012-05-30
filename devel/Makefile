@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1592 2012/05/08 09:37:52 imil Exp $
+# $NetBSD: Makefile,v 1.1595 2012/05/17 05:00:27 jnemeth Exp $
 #
 
 COMMENT=	Development utilities
@@ -436,6 +436,7 @@ SUBDIR+=	mad-flute
 SUBDIR+=	makedepend
 SUBDIR+=	makedepf90
 SUBDIR+=	maketool
+SUBDIR+=	man-pages
 SUBDIR+=	mantis
 SUBDIR+=	matio
 SUBDIR+=	mdds
@@ -1354,6 +1355,7 @@ SUBDIR+=	ruby-bsearch
 SUBDIR+=	ruby-byaccr
 SUBDIR+=	ruby-cmd
 SUBDIR+=	ruby-curses
+SUBDIR+=	ruby-daemon_controller
 SUBDIR+=	ruby-debug
 SUBDIR+=	ruby-debug-base
 SUBDIR+=	ruby-debug-extra

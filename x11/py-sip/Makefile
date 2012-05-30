@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.29 2012/02/17 18:36:45 drochner Exp $
+# $NetBSD: Makefile,v 1.31 2012/05/23 13:26:49 obache Exp $
 
 DISTNAME=	sip-4.13.2
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME}

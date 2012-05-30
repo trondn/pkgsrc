@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.32 2012/05/08 09:24:15 abs Exp $
+# $NetBSD: Makefile,v 1.35 2012/05/22 05:57:50 joerg Exp $
 
 DISTNAME=	openjdk-7-fcs-src-b147-27_jun_2011
 PKGNAME=	openjdk7-1.7.0.147.20110811
-PKGREVISION=	3
+PKGREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL:=openjdk7/}
 EXTRACT_SUFX=	.tar.bz2
@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 OWNER=		tnn@NetBSD.org
 HOMEPAGE=	http://openjdk.java.net/
 COMMENT=	Open-source implementation of the Java Platform, Standard Edition
+LICENSE=	gnu-gpl-v2
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
@@ -40,7 +41,7 @@ DEPENDS+=		dejavu-ttf-[0-9]*:../../fonts/dejavu-ttf
 
 NO_CONFIGURE=		yes
 USE_LANGUAGES=		c c++
-USE_TOOLS+=		gmake pax unzip:run zip:run
+USE_TOOLS+=		gmake pax unzip:run zip:run patch
 UNLIMIT_RESOURCES=	datasize stacksize
 WRKSRC=			${WRKDIR}/openjdk
 
@@ -58,6 +59,7 @@ MAKE_ENV+=	ALT_X11_PATH=${X11BASE}
 MAKE_ENV+=	RHINO_JAR=${WRKDIR}/${RHINO}/js.jar
 
 MAKE_ENV+=	ALT_PARALLEL_COMPILE_JOBS=${MAKE_JOBS:U1}
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
 
 MAKE_ENV+=	HOTSPOT_BUILD_USER=pkgsrc
 MAKE_ENV+=	NO_DOCS=true
@@ -70,8 +72,10 @@ MAKE_ENV+=	JAVA_HOME=
 MAKE_ENV+=	CLASSPATH=
 
 MAKE_ENV+=	EXTRA_CFLAGS="-DDEFAULT_LIBPATH=\\\"${PREFIX}/lib/jni:${PREFIX}/lib:/lib:/usr/lib\\\""
-
 BUILDDIR=	${WRKSRC}/build/${OPSYS:C/.*BSD/bsd/:S/DragonFly/bsd/}-${MACHINE_ARCH:S/i386/i586/:S/x86_64/amd64/}
+MAKE_ENV+=	LD_LIBRARY_PATH=${BUILDDIR}/lib/${MACHINE_ARCH:S/i386/i586/:S/x86_64/amd64/}
+BUILDLINK_PASSTHRU_RPATHDIRS+=	${PREFIX}/java/openjdk7/jre/lib/${MACHINE_ARCH:S/x86_64/amd64/}
+
 PLIST_SUBST+=	ARCH=${MACHINE_ARCH:S/x86_64/amd64/}
 PLIST_SUBST+=	LOWER_OPSYS=${LOWER_OPSYS}
 

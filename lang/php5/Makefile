@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.87 2011/06/24 11:59:29 taca Exp $
+# $NetBSD: Makefile,v 1.89 2012/05/17 19:01:43 marino Exp $
 
 PKGNAME=		php-${PHP_BASE_VERS}
-PKGREVISION=		4
+PKGREVISION=		5
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.php.net/
@@ -37,7 +37,7 @@ CONFIGURE_ENV+=		lt_cv_path_SED=${SED:Q}
 MAKE_ENV+=		INSTALL_ROOT=${DESTDIR:Q}
 
 CONF_FILES=		${EGDIR}/php.ini-recommended ${PKG_SYSCONFDIR}/php.ini
-OWN_DIRS=		${PREFIX}/${PHP_EXTENSION_DIR}
+PLIST_SUBST+=		PHPEXTDIR="${PHP_EXTENSION_DIR}"
 
 SUBST_CLASSES+=		path
 SUBST_MESSAGE.path=	Fixing common paths.
@@ -46,7 +46,7 @@ SUBST_FILES.path=	configure php.ini-dist php.ini-recommended
 SUBST_SED.path=		-e 's,@CGIDIR@,${CGIDIR},g'
 SUBST_SED.path+=	-e 's,@PREFIX@,${PREFIX},g'
 
-INSTALLATION_DIRS+=	${CGIDIR}
+INSTALLATION_DIRS+=	${CGIDIR} ${PHP_EXTENSION_DIR}
 
 # Make sure modules can link correctly
 .if ${OPSYS} == "Darwin"
