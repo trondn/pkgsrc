@@ -1,11 +1,11 @@
-# $NetBSD: Makefile,v 1.17 2012/05/10 16:07:36 abs Exp $
+# $NetBSD: Makefile,v 1.19 2012/05/30 08:29:43 bouyer Exp $
 #
 # VERSION is set in version.mk as it is shared with other packages
 .include		"version.mk"
 
 DISTNAME=		xen-${VERSION}
 PKGNAME=		xentools41-${VERSION}
-PKGREVISION=		5
+PKGREVISION=		7
 CATEGORIES=		sysutils
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${VERSION}/
 
@@ -174,5 +174,6 @@ CPPFLAGS+=	-Dshm_open=open -Dshm_unlink=unlink
 .include "../../devel/ncurses/buildlink3.mk"
 #.include "../../devel/SDL/buildlink3.mk"
 .include "../../lang/ocaml/buildlink3.mk"
+.include "../../sysutils/pciutils/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"

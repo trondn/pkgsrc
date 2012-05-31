@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.466 2012/04/17 08:32:47 wiz Exp $
+# $NetBSD: Makefile,v 1.468 2012/05/30 13:51:10 wiz Exp $
 #
 
 COMMENT=	Audio tools
@@ -214,6 +214,7 @@ SUBDIR+=	libmpg123
 SUBDIR+=	libmtag
 SUBDIR+=	libmusepack
 SUBDIR+=	libmusicbrainz
+SUBDIR+=	libmusicbrainz5
 SUBDIR+=	libofa
 SUBDIR+=	libopenspc
 SUBDIR+=	libsamplerate
@@ -324,6 +325,7 @@ SUBDIR+=	py-daap
 SUBDIR+=	py-id3
 SUBDIR+=	py-id3lib
 SUBDIR+=	py-karaoke
+SUBDIR+=	py-last
 SUBDIR+=	py-libmtag
 SUBDIR+=	py-mad
 SUBDIR+=	py-mpd
