@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.6 2012/03/08 17:13:21 wiz Exp $
+@comment $NetBSD: PLIST,v 1.8 2012/05/31 21:37:09 shattered Exp $
 bin/castool
 bin/floptool
 bin/imgtool
