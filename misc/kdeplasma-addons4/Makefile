@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.26 2012/04/15 03:51:41 markd Exp $
+# $NetBSD: Makefile,v 1.29 2012/06/16 04:45:37 markd Exp $
 
 DISTNAME=	kdeplasma-addons-${_KDE_VERSION}
 PKGNAME=	${DISTNAME:S/-4/4-4/}

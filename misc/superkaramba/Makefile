@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.2 2012/04/08 19:09:07 wiz Exp $
+# $NetBSD: Makefile,v 1.4 2012/06/16 04:45:35 markd Exp $
 
 DISTNAME=	superkaramba-${_KDE_VERSION}
 CATEGORIES=	misc

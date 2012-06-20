@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.2 2012/06/05 21:53:42 wiz Exp $
+# $NetBSD: Makefile,v 1.4 2012/06/14 07:44:15 sbd Exp $
 
 VER=			3.5.4.2
 DISTNAME=		libreoffice-${VER}
 PKGNAME=		libreoffice-${VER:S/-//g}
-PKGREVISION=		1
+PKGREVISION=		2
 CATEGORIES=		misc
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.5.4/ \
 		http://dev-www.libreoffice.org/src/ \
@@ -90,7 +90,7 @@ PTHREAD_OPTS+=		require
 HAS_CONFIGURE=		yes
 CHECK_PORTABILITY_SKIP=	configure
 
-CONFIGURE_ARGS+=	--prefix=${DESTDIR}${PREFIX}/${PKGNAME}
+CONFIGURE_ARGS+=	--prefix=${DESTDIR}${PREFIX}/${PKGNAME_NOREV}
 CONFIGURE_ARGS+=	--disable-ccache
 CONFIGURE_ARGS+=	--disable-epm
 CONFIGURE_ARGS+=	--disable-ext-presenter-console
@@ -167,11 +167,11 @@ post-configure:
 AUTO_MKDIRS=	yes
 post-install:
 	for f in ${LO_PROGRAMS}; do \
-		${LN} -s ${DESTDIR}${PREFIX}/${PKGNAME}/program/$$f ${DESTDIR}${PREFIX}/bin/$$f; \
+		${LN} -s ${DESTDIR}${PREFIX}/${PKGNAME_NOREV}/program/$$f ${DESTDIR}${PREFIX}/bin/$$f; \
 	done
-	${LN} -s ${DESTDIR}${PREFIX}/${PKGNAME}/program/soffice ${DESTDIR}${PREFIX}/bin/libreoffice3.5
+	${LN} -s ${DESTDIR}${PREFIX}/${PKGNAME_NOREV}/program/soffice ${DESTDIR}${PREFIX}/bin/libreoffice3.5
 	for f in ${LO_DESKTOP_FILES}; do \
-		${LN} -s ${DESTDIR}${PREFIX}/${PKGNAME}/share/xdg/$$f ${DESTDIR}${PREFIX}/share/applications; \
+		${LN} -s ${DESTDIR}${PREFIX}/${PKGNAME_NOREV}/share/xdg/$$f ${DESTDIR}${PREFIX}/share/applications; \
 	done
 
 

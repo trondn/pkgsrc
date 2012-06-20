@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.2 2012/04/08 19:09:11 wiz Exp $
+# $NetBSD: Makefile,v 1.4 2012/06/16 04:45:37 markd Exp $
 
 DISTNAME=	printer-applet-${_KDE_VERSION}
 CATEGORIES=	print

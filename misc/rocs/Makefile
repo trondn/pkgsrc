@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1 2012/03/20 08:29:32 markd Exp $
+# $NetBSD: Makefile,v 1.3 2012/06/16 04:45:34 markd Exp $
 
 DISTNAME=	rocs-${_KDE_VERSION}
 CATEGORIES=	misc

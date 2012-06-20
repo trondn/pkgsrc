@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.23 2012/03/19 20:01:10 markd Exp $
+# $NetBSD: Makefile,v 1.26 2012/06/16 04:45:38 markd Exp $
 
 DISTNAME=	kdewebdev-${_KDE_VERSION}
 PKGNAME=	${DISTNAME:S/-4/4-4/}

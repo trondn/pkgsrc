@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.436 2012/06/02 14:32:15 bsiegert Exp $
+# $NetBSD: Makefile,v 1.439 2012/06/16 22:01:17 dholland Exp $
 #
 
 COMMENT=	Security tools
@@ -69,6 +69,7 @@ SUBDIR+=	fsh
 SUBDIR+=	fwbuilder
 SUBDIR+=	gnome-keyring
 SUBDIR+=	gnome-keyring-manager
+SUBDIR+=	gnome-keyring-sharp
 SUBDIR+=	gnu-crypto
 SUBDIR+=	gnupg
 SUBDIR+=	gnupg-pkcs11-scd
@@ -272,7 +273,6 @@ SUBDIR+=	pgp5
 SUBDIR+=	pgpdump
 SUBDIR+=	pgpenvelope
 SUBDIR+=	php-mcrypt
-SUBDIR+=	php-mhash
 SUBDIR+=	php-suhosin
 SUBDIR+=	pinentry
 SUBDIR+=	pinentry-gtk
@@ -354,6 +354,7 @@ SUBDIR+=	secpanel
 SUBDIR+=	sfs
 SUBDIR+=	sign
 SUBDIR+=	skey
+SUBDIR+=	sks
 SUBDIR+=	smtpd
 SUBDIR+=	sniff
 SUBDIR+=	snortsnarf

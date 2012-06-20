@@ -1,8 +1,6 @@
-# $NetBSD: Makefile,v 1.31 2012/05/29 00:32:27 dholland Exp $
-#
+# $NetBSD: Makefile,v 1.33 2012/06/18 00:32:07 dholland Exp $
 
-DISTNAME=	weechat-0.3.7
-PKGREVISION=	1
+DISTNAME=	weechat-0.3.8
 CATEGORIES=	chat
 MASTER_SITES=	http://www.weechat.org/files/src/
 
@@ -10,12 +8,13 @@ MAINTAINER=	tonio@NetBSD.org
 HOMEPAGE=	http://www.weechat.org/
 COMMENT=	Lightweight and user friendly curses based IRC client
 LICENSE=	gnu-gpl-v3
+EXTRACT_SUFX=	.tar.bz2
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
 PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_PKGLOCALEDIR=	yes
-USE_TOOLS+=		msgfmt
+USE_TOOLS+=		msgfmt pkg-config
 USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--disable-tcl --disable-guile --disable-aspell
