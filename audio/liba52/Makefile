@@ -15,6 +15,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=		yes
 USE_LIBTOOL=		yes
+USE_MULTIARCH=		lib
 
 CONFIGURE_ARGS+=	--disable-oss
 CONFIGURE_ARGS+=	--disable-mlib

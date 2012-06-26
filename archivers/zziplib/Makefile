@@ -17,6 +17,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 .include "../../mk/bsd.prefs.mk"
 
 USE_LIBTOOL=		yes
+USE_MULTIARCH=		lib
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-zlib=${BUILDLINK_PREFIX.zlib}
 CONFIGURE_ARGS+=	--disable-builddir
