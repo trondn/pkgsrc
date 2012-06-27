@@ -59,9 +59,7 @@ BUILD_SHLIBTOOL=	NO
 .  endif
 
 .elif ${OPSYS} == "SunOS"
-.  if !empty(ABI:M64)
-CFLAGS+=		-m64
-.  endif
+CFLAGS+=		${_COMPILER_ABI_FLAG.${ABI}}
 .endif
 
 BUILD_SHLIBTOOL?=	YES
