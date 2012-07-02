@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.91 2012/06/07 21:23:45 ryoon Exp $
+# $NetBSD: Makefile,v 1.93 2012/06/25 10:16:53 sbd Exp $
 
 DISTNAME=		qemu-1.1.0
+PKGREVISION=		1
 CATEGORIES=		emulators
 MASTER_SITES=		http://wiki.qemu.org/download/
 EXTRACT_SUFX=		.tar.bz2
@@ -74,7 +75,7 @@ SUBST_FILES.qaudio=	arch_init.c monitor.c savevm.c vl.c \
 SUBST_SED.qaudio=	-e s,audio.h\",qaudio.h\",g
 SUBST_MESSAGE.qaudio=	Fixing audio.h confusion
 
-REPLACE_PERL+=		texi2pod.pl
+REPLACE_PERL+=		scripts/texi2pod.pl
 
 BUILDLINK_PASSTHRU_DIRS+= /usr/lib
 BUILDLINK_PASSTHRU_RPATHDIRS+= /usr/lib
