@@ -19,6 +19,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 CHECK_PERMS=		no
 
 GNU_CONFIGURE=		yes
+USE_MULTIARCH=		bin
 
 .include "../../mk/bsd.prefs.mk"
 
