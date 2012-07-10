@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.625 2012/06/04 14:28:35 wiz Exp $
+# $NetBSD: Makefile,v 1.630 2012/07/06 12:31:55 sno Exp $
 #
 
 COMMENT=	Text processing utilities (does not include desktop publishing)
@@ -309,6 +309,7 @@ SUBDIR+=	p5-PPI-HTML
 SUBDIR+=	p5-Pod-Abstract
 SUBDIR+=	p5-Pod-Coverage
 SUBDIR+=	p5-Pod-Escapes
+SUBDIR+=	p5-Pod-Eventual
 SUBDIR+=	p5-Pod-POM
 SUBDIR+=	p5-Pod-Parser
 SUBDIR+=	p5-Pod-Readme
@@ -329,6 +330,9 @@ SUBDIR+=	p5-String-Approx
 SUBDIR+=	p5-String-BufferStack
 SUBDIR+=	p5-String-CRC32
 SUBDIR+=	p5-String-CamelCase
+SUBDIR+=	p5-String-Errf
+SUBDIR+=	p5-String-Flogger
+SUBDIR+=	p5-String-Formatter
 SUBDIR+=	p5-String-Koremutake
 SUBDIR+=	p5-String-RewritePrefix
 SUBDIR+=	p5-String-ShellQuote
@@ -439,6 +443,7 @@ SUBDIR+=	p5-XML-RSS-Parser
 SUBDIR+=	p5-XML-Rabbit
 SUBDIR+=	p5-XML-RegExp
 SUBDIR+=	p5-XML-SAX
+SUBDIR+=	p5-XML-SAX-Base
 SUBDIR+=	p5-XML-SAX-Expat
 SUBDIR+=	p5-XML-SAX-ExpatXS
 SUBDIR+=	p5-XML-SAX-Writer

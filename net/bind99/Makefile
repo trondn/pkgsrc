@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.6 2012/06/14 07:45:39 sbd Exp $
+# $NetBSD: Makefile,v 1.8 2012/07/10 10:23:03 sbd Exp $
 
 DISTNAME=	bind-${BIND_VERSION}
 PKGNAME=	${DISTNAME:S/-P/pl/}
-PKGREVISION=	1
+PKGREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${BIND_VERSION}/ \
 		http://ftp.belnet.be/pub/mirror/ftp.isc.org/isc/bind9/${BIND_VERSION}/
@@ -54,8 +54,6 @@ PKG_USERS=		${BIND_USER}:${BIND_GROUP}
 PKG_GECOS.${BIND_USER}=	Named pseudo-user
 PKG_HOME.${BIND_USER}=	${BIND_DIR}
 
-PTHREAD_OPTS+=		native
-PTHREAD_AUTO_VARS=	yes
 DOCS=			CHANGES FAQ README REDIRECT-NOTES
 
 FILES_SUBST+=		BIND_GROUP=${BIND_GROUP:Q} \
