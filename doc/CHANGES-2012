@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2012,v 1.2242 2012/07/10 10:53:36 wiz Exp $
+$NetBSD: CHANGES-2012,v 1.2256 2012/07/11 19:10:28 ryoon Exp $
 
 Changes to the packages collection and infrastructure in 2012:
 
@@ -3487,3 +3487,23 @@ Changes to the packages collection and infrastructure in 2012:
 	Updated net/bind99 to 9.9.1pl1nb2 [sbd 2012-07-10]
 	Updated pkgtools/pkglint to 4.115 [wiz 2012-07-10]
 	Updated pkgtools/pkglint to 4.116 [wiz 2012-07-10]
+	Updated www/php-owncloud to 4.0.4 [ryoon 2012-07-10]
+	Updated devel/atf-libs to 0.16 [jmmv 2012-07-10]
+	Updated devel/atf to 0.16 [jmmv 2012-07-10]
+	Updated devel/kyua-cli to 0.5 [jmmv 2012-07-10]
+	Added devel/kyua-atf-compat version 0.1 [jmmv 2012-07-10]
+	Updated print/kpathsea to 6.1.0 [minskim 2012-07-10]
+	Updated print/ptexenc to 1.3.0 [minskim 2012-07-10]
+	Updated print/web2c to 2012 [minskim 2012-07-10]
+	Updated graphics/png to 1.5.12 [wiz 2012-07-11]
+	Updated graphics/openjpeg to 1.5.0nb1 [wiz 2012-07-11]
+	Updated devel/p5-glib2 to 1.260 [wiz 2012-07-11]
+	Updated x11/p5-gtk2 to 1.243 [wiz 2012-07-11]
+	Updated www/ocsigen to 2.1 [wiz 2012-07-11]
+	Added print/tex-xtab version 2.3f [minskim 2012-07-11]
+	Added print/tex-xtab-doc version 2.3f [minskim 2012-07-11]
+	Updated print/teTeX3-texmf to 3.0nb37 [minskim 2012-07-11]
+	Added devel/ocaml-deriving-ocsigen version 0.3c [wiz 2012-07-11]
+	Added devel/js_of_ocaml version 1.2 [wiz 2012-07-11]
+	Updated databases/ipa_sdb to 1.1.1 [wiz 2012-07-11]
+	Updated www/apache24 to 2.4.2nb3 [ryoon 2012-07-11]
