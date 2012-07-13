@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.534 2012/05/18 03:07:26 schnoebe Exp $
+# $NetBSD: Makefile,v 1.537 2012/07/11 12:58:56 minskim Exp $
 #
 
 COMMENT=	Desktop publishing
@@ -107,6 +107,7 @@ SUBDIR+=	poppler-includes
 SUBDIR+=	poppler-qt
 SUBDIR+=	poppler-qt4
 SUBDIR+=	poppler-utils
+SUBDIR+=	poppler016
 SUBDIR+=	poster
 SUBDIR+=	printer-applet
 SUBDIR+=	pscal
@@ -685,6 +686,8 @@ SUBDIR+=	tex-xkeyval
 SUBDIR+=	tex-xkeyval-doc
 SUBDIR+=	tex-xltxtra
 SUBDIR+=	tex-xltxtra-doc
+SUBDIR+=	tex-xtab
+SUBDIR+=	tex-xtab-doc
 SUBDIR+=	tex-xunicode
 SUBDIR+=	tex-xunicode-doc
 #SUBDIR+=	texlive				# place holder directory
@@ -692,6 +695,7 @@ SUBDIR+=	texlive-tetex
 SUBDIR+=	transfig
 SUBDIR+=	web2c
 SUBDIR+=	xdvik
+SUBDIR+=	xdvipdfmx
 SUBDIR+=	xetex
 SUBDIR+=	xfce4-print
 SUBDIR+=	xpdf

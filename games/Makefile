@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.352 2012/05/25 20:40:08 wiz Exp $
+# $NetBSD: Makefile,v 1.354 2012/07/07 20:20:07 abs Exp $
 #
 
 COMMENT=	Games
@@ -270,6 +270,7 @@ SUBDIR+=	ufoai
 SUBDIR+=	urban
 SUBDIR+=	velena
 SUBDIR+=	vms-empire
+SUBDIR+=	wargames
 SUBDIR+=	warmux
 SUBDIR+=	warzone2100
 SUBDIR+=	wesnoth
@@ -286,6 +287,7 @@ SUBDIR+=	xbomb
 SUBDIR+=	xbomber
 SUBDIR+=	xbreaky
 SUBDIR+=	xconq
+SUBDIR+=	xcowsay
 SUBDIR+=	xdemineur
 SUBDIR+=	xdoom
 SUBDIR+=	xemeraldia

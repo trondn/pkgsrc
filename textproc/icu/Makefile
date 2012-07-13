@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.72 2012/05/08 16:10:38 hans Exp $
+# $NetBSD: Makefile,v 1.75 2012/07/10 19:14:47 bsiegert Exp $
 
-DISTNAME=	icu4c-49_1_1-src
+DISTNAME=	icu4c-49_1_2-src
 PKGNAME=	${DISTNAME:S/4c//:S/-src//:S/_/./g}
 PKGREVISION=	1
 CATEGORIES=	textproc
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--disable-threads
 
 .include "../../mk/compiler.mk"
 
-.if ${OPSYS} == "FreeBSD" || ${OPSYS} == "NetBSD" || ${OPSYS} == "OpenBSD" || ${OPSYS} == "DragonFly"
+.if ${OPSYS} == "FreeBSD" || ${OPSYS} == "NetBSD" || ${OPSYS} == "OpenBSD" || ${OPSYS} == "DragonFly" || ${OPSYS} == "MirBSD"
 PLIST_SUBST+=		MH_NAME=mh-bsd-gcc
 .elif ${OPSYS} == "Linux"
 PLIST_SUBST+=		MH_NAME=mh-linux
