@@ -18,6 +18,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 USE_TOOLS+=		gmake
 USE_FEATURES=		glob
 USE_LIBTOOL=		yes
+USE_MULTIARCH=		bin lib
 PKGCONFIG_OVERRIDE=	libxml-2.0.pc.in
 
 GNU_CONFIGURE=		yes
