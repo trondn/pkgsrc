@@ -12,6 +12,7 @@ COMMENT=		Fast clone of lex(1), the lexical scanner generator
 PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=		YES
+USE_MULTIARCH=		bin lib
 USE_TOOLS+=		gm4:run makeinfo
 MAKE_JOBS_SAFE=		no
 TEST_TARGET=		check
@@ -31,7 +32,7 @@ USE_TOOLS+=		gmake	# bmake has problems with the test suite
 #.endif
 
 post-install:
-	cd ${DESTDIR:Q}${PREFIX:Q}/bin && ln -s flex flex++
+	cd ${DESTDIR:Q}${PREFIX:Q}/bin${BINARCHSUFFIX} && ln -s flex flex++
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
