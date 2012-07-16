@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.20 2012/07/06 21:10:11 jnemeth Exp $
+# $NetBSD: Makefile,v 1.22 2012/07/15 08:58:18 marino Exp $
 #
 # NOTE: when updating this package, there are two places that sound
 #       tarballs need to be checked
 
-DISTNAME=	asterisk-10.5.2
+DISTNAME=	asterisk-10.6.0
 DIST_SUBDIR=	${PKGNAME_NOREV}
 DISTFILES=	${DEFAULT_DISTFILES}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -98,6 +98,11 @@ BUILDLINK_TRANSFORM+=	rm:-march=i386
 PLIST_VARS+=	kqueue
 .if exists(/usr/include/sys/event.h)
 PLIST.kqueue=	yes
+.endif
+
+PLIST_VARS+=	mgcp
+.if ${OPSYS} == "DragonFly"
+PLIST.mgcp=	yes
 .endif
 
 .include "options.mk"
