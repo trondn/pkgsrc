@@ -1,4 +1,4 @@
-# $NetBSD$
+# $NetBSD: Makefile,v 1.4 2012/07/12 13:47:23 marino Exp $
 
 PKGNAME=	${GCC_PKGNAME}-${GCC_DIST_VERSION}
 COMMENT=	The GNU Compiler Collection (GCC)
