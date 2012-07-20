@@ -89,6 +89,12 @@ GCC_REQD+=	2.8.0
 GCC_REQD+=	3.0
 .endif
 
+# On systems which do not use the GNU linker, gcc will link against libgcc
+# when building shared libraries, so we mandate it as a dependency.
+.if ${OPSYS} == "SunOS" && (defined(USE_LIBTOOL) || defined(USE_GCC_RUNTIME))
+_USE_GCC_SHLIB=	yes
+.endif
+
 # Only one compiler defined here supports Ada: lang/gcc-aux
 # If the Ada language is requested, force lang/gcc-aux to be selected
 .if !empty(USE_LANGUAGES:Mada)
@@ -733,6 +739,14 @@ PREPEND_PATH+=	${_GCC_DIR}/bin
 .  for _dir_ in ${_GCC_PKGSRCDIR}
 .    include "${_dir_}/buildlink3.mk"
 .  endfor
+.endif
+
+# Add dependency on GCC runtime if requested.
+.if !empty(_USE_GCC_SHLIB:M[Yy][Ee][Ss]) && !empty(USE_PKGSRC_GCC_RUNTIME:M[Yy][Ee][Ss])
+#  Special case packages which are themselves a dependency of gcc runtime.
+.  if empty(PKGPATH:Mdevel/libtool-base) && empty(PKGPATH:Mdevel/binutils)
+.    include "../../lang/gcc47-runtime/buildlink3.mk"
+.  endif
 .endif
 
 .for _var_ in ${_GCC_VARS}
