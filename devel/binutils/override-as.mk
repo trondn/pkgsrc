@@ -20,4 +20,5 @@ ${SPECS_AS}:
 
 _WRAP_EXTRA_ARGS.CC+=	-specs ${SPECS_AS}
 _WRAP_EXTRA_ARGS.CXX+=	-specs ${SPECS_AS}
+
 .endif
