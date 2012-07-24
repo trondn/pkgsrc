@@ -93,7 +93,9 @@ CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/ccs/bin/ld
 .  if exists(/usr/sfw/bin/gas)
 CONFIGURE_ARGS+=	--with-gnu-as --with-as=/usr/sfw/bin/gas
 .  else
+.    if !empty(PKGPATH:Mlang/gcc47-compiler)
 BUILDLINK_DEPMETHOD.binutils=	full
+.    endif
 .    include "../../devel/binutils/buildlink3.mk"
 CONFIGURE_ARGS+=	--with-gnu-as --with-as=${PREFIX}/gnu/bin/as
 .  endif
