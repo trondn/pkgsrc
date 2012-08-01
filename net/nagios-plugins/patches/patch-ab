@@ -20,6 +20,15 @@ $NetBSD: patch-ab,v 1.7 2011/04/08 22:56:12 morr Exp $
    LDAPLIBS="-lldap -llber"\
    LDAPINCLUDE="-I/usr/include/ldap"
  
+@@ -18068,7 +18068,7 @@
+         ac_cv_ps_cols=9
+         { echo "$as_me:$LINENO: result: using nagios-plugins internal ps command (pst3) for solaris" >&5
+ echo "${ECHO_T}using nagios-plugins internal ps command (pst3) for solaris" >&6; }
+-	if test `isainfo -b` = 64 ; then
++	if test "$ABI" = "64"; then
+		pst3_use_64bit=1
+		{ echo "$as_me:$LINENO: using 64bit pst3" >&5
+ echo "$as_me: using 64bit pst3" >&6;}
 @@ -19037,7 +19037,7 @@ fi
  	then
  		{ echo "$as_me:$LINENO: checking for nslookup syntax" >&5
