@@ -1,11 +1,9 @@
-# $NetBSD: options.mk,v 1.7 2012/07/16 00:33:44 sbd Exp $
-
-# Since amanda's ipv6 usage is broken, turn it off by default.
+# $NetBSD: options.mk,v 1.9 2012/07/30 07:21:11 sbd Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.amanda
 # Common options.
-PKG_SUPPORTED_OPTIONS+=	inet6 amanda-fqdn amanda-ssh
-PKG_SUGGESTED_OPTIONS+=	inet6 amanda-ssh
+PKG_SUPPORTED_OPTIONS+=	inet6 amanda-fqdn amanda-ssh kerberos
+PKG_SUGGESTED_OPTIONS+=	inet6 amanda-fqdn amanda-ssh kerberos
 # Client options.
 PKG_SUPPORTED_OPTIONS+=	amanda-smb amanda-dump-snap
 PKG_SUGGESTED_OPTIONS+=	amanda-dump-snap
@@ -36,4 +34,9 @@ FIND_PREFIX:= 		SSHPREFIX=openssh
 .include "../../mk/find-prefix.mk"
 CONFIGURE_ENV+=		ac_cv_path_SSH=${SSHPREFIX}/bin/ssh
 .  endif
+.endif
+
+.if !empty(PKG_OPTIONS:Mkerberos)
+CONFIGURE_ARGS+=	--with-krb5-security=${KRB5BASE:Q}
+.  include "../../mk/krb5.buildlink3.mk"
 .endif
