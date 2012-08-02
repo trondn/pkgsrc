@@ -78,6 +78,14 @@ MAKE_ENV+=		lt_cv_path_SED=${TOOLS_SED}
 
 # Determine whether to use binutils
 .if ${OPSYS} == "SunOS"
+.  if exists(/usr/sfw/bin/gobjdump)
+CONFIGURE_ENV+=		OBJDUMP=/usr/sfw/bin/gobjdump
+.  endif
+.  if exists(/usr/bin/ld)
+CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/bin/ld
+.  else
+CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/ccs/bin/ld
+.  endif
 .  if exists(/usr/sfw/bin/gas)
 CONFIGURE_ARGS+=	--with-gnu-as --with-as=/usr/sfw/bin/gas
 .  elif exists(/usr/ccs/bin/as)
