@@ -14,5 +14,6 @@ LICENSE=	mit
 PKG_DESTDIR_SUPPORT=	user-destdir
 GNU_CONFIGURE=		yes
 USE_LIBTOOL=		yes
+USE_MULTIARCH=		lib
 
 .include "../../mk/bsd.pkg.mk"
