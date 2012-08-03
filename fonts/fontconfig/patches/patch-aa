@@ -1,8 +1,8 @@
 $NetBSD: patch-aa,v 1.14 2012/06/10 16:12:47 wiz Exp $
 
---- Makefile.in.orig	2012-03-10 17:30:13.000000000 +0000
-+++ Makefile.in
-@@ -319,10 +319,11 @@ MAINTAINERCLEANFILES = $(srcdir)/aclocal
+--- Makefile.in.orig	Sat Mar 10 17:30:13 2012
++++ Makefile.in	Fri Aug  3 12:16:51 2012
+@@ -319,10 +319,11 @@
  	-type f -name Makefile.in -print` $(srcdir)/ChangeLog
  pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = fontconfig.pc
@@ -15,13 +15,17 @@ $NetBSD: patch-aa,v 1.14 2012/06/10 16:12:47 wiz Exp $
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -900,7 +901,8 @@ fonts.conf: fonts.conf.in Makefile
+@@ -900,11 +901,8 @@
  	mv $@.tmp $@
  
  install-data-local: fonts.conf
 -	$(mkinstalldirs) $(DESTDIR)$(configdir) $(DESTDIR)$(fc_cachedir)
+-	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
+-	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
+-	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
+-	fi
 +	$(mkinstalldirs) $(DESTDIR)$(configdir)
 +	$(mkinstalldirs) $(DESTDIR)$(fc_cachedir)
- 	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
- 	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
- 	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
+ 	if [ -f $(srcdir)/fonts.conf ]; then \
+ 	  echo " $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
+ 	  $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
