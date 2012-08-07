@@ -1,4 +1,4 @@
-# $NetBSD: rubyversion.mk,v 1.81 2012/07/06 09:48:26 obache Exp $
+# $NetBSD: rubyversion.mk,v 1.83 2012/07/25 14:26:57 bsiegert Exp $
 #
 
 # This file determines which Ruby version is used as a dependency for
@@ -203,7 +203,7 @@ RUBY19_VERSION=		1.9.2
 RUBY193_VERSION=	1.9.3
 
 # patch
-RUBY18_PATCHLEVEL=	pl358
+RUBY18_PATCHLEVEL=	pl370
 RUBY19_PATCHLEVEL=	pl320
 RUBY193_PATCHLEVEL=	p194
 
@@ -326,7 +326,7 @@ RUBY_SHLIBVER=		${RUBY_VER}
 .else
 RUBY_SHLIBVER=		${_RUBY_VER_MAJOR}${_RUBY_VER_MINOR}${_RUBY_API_MINOR}
 .endif
-.elif ${OPSYS} == "OpenBSD"
+.elif ${OPSYS} == "OpenBSD" || ${OPSYS} == "MirBSD"
 RUBY_SHLIBVER=		${_RUBY_VER_MAJOR}.${_RUBY_VER_MINOR}${_RUBY_API_MINOR}
 .elif ${OPSYS} == "Darwin"
 RUBY_SHLIB=		${RUBY_VER}.${RUBY_SHLIBVER}.${RUBY_SLEXT}

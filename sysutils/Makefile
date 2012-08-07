@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.543 2012/07/12 23:56:37 abs Exp $
+# $NetBSD: Makefile,v 1.547 2012/08/06 17:06:34 jmmv Exp $
 #
 
 COMMENT=	System utilities
@@ -67,6 +67,7 @@ SUBDIR+=	daemond
 SUBDIR+=	daemontools
 SUBDIR+=	dbus
 SUBDIR+=	dbus-glib
+SUBDIR+=	dbus-python-common
 SUBDIR+=	dbus-qt3
 SUBDIR+=	dc-tools
 SUBDIR+=	dd_rescue
@@ -147,6 +148,7 @@ SUBDIR+=	gnome-volume-manager
 SUBDIR+=	gnometoaster
 SUBDIR+=	gpart
 SUBDIR+=	grub
+SUBDIR+=	grub2
 SUBDIR+=	grun
 SUBDIR+=	gst-plugins0.10-gio
 SUBDIR+=	gst-plugins0.10-gnomevfs
@@ -382,10 +384,13 @@ SUBDIR+=	su2
 SUBDIR+=	sux
 SUBDIR+=	swapd
 SUBDIR+=	swatch
+SUBDIR+=	sysbuild
+SUBDIR+=	sysbuild-user
 SUBDIR+=	sysgen
 SUBDIR+=	sysinfo
 SUBDIR+=	syslog-ng
 SUBDIR+=	system-tools-backends
+SUBDIR+=	sysupgrade
 SUBDIR+=	tarsnap
 SUBDIR+=	tcx
 SUBDIR+=	tdir

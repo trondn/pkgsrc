@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.93 2012/06/25 10:16:53 sbd Exp $
+# $NetBSD: Makefile,v 1.95 2012/08/03 17:51:47 asau Exp $
 
-DISTNAME=		qemu-1.1.0
+DISTNAME=		qemu-1.1.1-1
+PKGNAME=		qemu-1.1.1.1
 PKGREVISION=		1
 CATEGORIES=		emulators
 MASTER_SITES=		http://wiki.qemu.org/download/
@@ -15,6 +16,8 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 CONFLICTS+=		qemu-bin-[0-9]*
 NOT_FOR_PLATFORM=	NetBSD-1.[0-6]*-*
+
+WRKSRC=			${WRKDIR}/qemu-1.1.1
 
 USE_TOOLS+=		gmake makeinfo perl:build pkg-config
 UNLIMIT_RESOURCES=	datasize

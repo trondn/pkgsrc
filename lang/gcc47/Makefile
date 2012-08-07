@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.4 2012/07/12 13:47:23 marino Exp $
+# $NetBSD: Makefile,v 1.5 2012/07/23 12:47:55 jperkin Exp $
 
 GCC_PKGNAME=		gcc47
 .include		"version.mk"
@@ -78,23 +78,25 @@ MAKE_ENV+=		lt_cv_path_SED=${TOOLS_SED}
 
 # Determine whether to use binutils
 .if ${OPSYS} == "SunOS"
-. if exists(/usr/sfw/bin/gobjdump)
+.  if exists(/usr/sfw/bin/gobjdump)
 CONFIGURE_ENV+=		OBJDUMP=/usr/sfw/bin/gobjdump
-. endif
-. if exists(/usr/bin/ld)
+.  endif
+.  if exists(/usr/bin/ld)
 CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/bin/ld
-. else
+.  else
 CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/ccs/bin/ld
-. endif
-. if exists(/usr/sfw/bin/gas)
+.  endif
+.  if exists(/usr/sfw/bin/gas)
 CONFIGURE_ARGS+=	--with-gnu-as --with-as=/usr/sfw/bin/gas
-. else
-CONFIGURE_ARGS+=	--with-gnu-as --with-as=${PREFIX}/bin/${GNU_PROGRAM_PREFIX}as
+.  elif exists(/usr/ccs/bin/as)
+CONFIGURE_ARGS+=	--without-gnu-as --with-as=/usr/ccs/bin/as
+.  else
 .  if empty(GCC_RUNTIME:Myes)
 BUILDLINK_DEPMETHOD.binutils=	full
 .  endif
-.  include "../../wip/binutils/buildlink3.mk"
-. endif
+.    include "../../devel/binutils/buildlink3.mk"
+CONFIGURE_ARGS+=	--with-gnu-as --with-as=${PREFIX}/gnu/bin/as
+.  endif
 .endif
 
 FILES_SUBST+=		MACHINE_ARCH=${MACHINE_ARCH}
