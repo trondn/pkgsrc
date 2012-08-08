@@ -1,11 +1,36 @@
 #!@SH@ -e
 #
-# $Id: pkg_chk.sh,v 1.67 2012/07/29 17:31:11 abs Exp $
+# $Id: pkg_chk.sh,v 1.69 2012/08/03 10:35:31 abs Exp $
 #
 # TODO: Make -g check dependencies and tsort
 # TODO: Make -g list user-installed packages first, followed by commented
 #	out automatically installed packages
 # TODO: List user-installed packages that are not in config
+
+# Copyright (c) 2012 David Brownlee (Standard 2 clause BSD licence)
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+# TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
 
 PATH=${PATH}:/usr/sbin:/usr/bin
 
@@ -82,9 +107,9 @@ check_packages_installed()
 			msg_n "$pkginstalled > $PKGNAME - ignoring"
 		    fi
 		fi
-		if is_binary_available $PKGNAME ;then
-		    msg_n " (has binary package)"
-		fi
+	    fi
+	    if is_binary_available $PKGNAME ;then
+		msg_n " (has binary package)"
 	    fi
 	    msg
 	else
@@ -747,8 +772,7 @@ if [ -z "$opt_b" -a -z "$opt_s" ];then
     opt_b=1; opt_s=1;
 fi
 
-if [ -z "$opt_a$opt_g$opt_l$opt_p$opt_r$opt_u$opt_N" ];
-then
+if [ -z "$opt_a$opt_g$opt_l$opt_p$opt_r$opt_u$opt_N" ];then
     usage "Must specify at least one of -a, -g, -l, -p, -r, -u or -N";
 fi
 
@@ -871,7 +895,7 @@ fi
 if [ -n "$opt_g" ]; then
     verbose "Write $PKGCHK_CONF based on installed packages"
     generate_conf_from_installed $PKGCHK_CONF
-    exit
+    cleanup_and_exit
 fi
 
 determine_tags
@@ -883,7 +907,7 @@ fi
 
 if [ -n "$opt_p" ] ; then
     pkgdirs_from_conf $PKGCHK_CONF $PKGDIRLIST | tr ' ' '\n'
-    exit
+    cleanup_and_exit
 fi
 
 if [ -n "$opt_a" -o -n "$opt_l" ];then	# Append to PKGDIRLIST based on conf
