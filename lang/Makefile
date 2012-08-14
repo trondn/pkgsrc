@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.324 2012/07/15 02:35:21 dholland Exp $
+# $NetBSD: Makefile,v 1.326 2012/08/08 20:26:07 asau Exp $
 #
 
 COMMENT=	Programming languages
@@ -8,6 +8,7 @@ SUBDIR+=	LuaJIT
 SUBDIR+=	STk
 SUBDIR+=	SmartEiffel
 SUBDIR+=	a60
+SUBDIR+=	abcl
 SUBDIR+=	algol68g
 SUBDIR+=	awka
 SUBDIR+=	baci
@@ -90,6 +91,7 @@ SUBDIR+=	kaffe
 SUBDIR+=	kaffe-esound
 SUBDIR+=	kaffe-x11
 SUBDIR+=	kali
+SUBDIR+=	konoha
 SUBDIR+=	ksi
 SUBDIR+=	librep
 SUBDIR+=	libtcl-nothread

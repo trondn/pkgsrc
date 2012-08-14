@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1631 2012/07/25 19:06:46 drochner Exp $
+# $NetBSD: Makefile,v 1.1635 2012/08/11 06:57:40 imil Exp $
 #
 
 COMMENT=	Development utilities
@@ -709,6 +709,7 @@ SUBDIR+=	p5-Devel-ebug
 SUBDIR+=	p5-Dir-Self
 SUBDIR+=	p5-Dist-CheckConflicts
 SUBDIR+=	p5-Dist-Zilla
+SUBDIR+=	p5-Dist-Zooky
 SUBDIR+=	p5-EV
 SUBDIR+=	p5-Error
 SUBDIR+=	p5-Eval-Closure
@@ -1081,6 +1082,7 @@ SUBDIR+=	p5-String-PerlIdentifier
 SUBDIR+=	p5-Sub-Exporter
 SUBDIR+=	p5-Sub-Exporter-ForMethods
 SUBDIR+=	p5-Sub-Exporter-GlobExporter
+SUBDIR+=	p5-Sub-Exporter-Progressive
 SUBDIR+=	p5-Sub-Identify
 SUBDIR+=	p5-Sub-Install
 SUBDIR+=	p5-Sub-Installer
@@ -1438,6 +1440,7 @@ SUBDIR+=	ruby-mode
 SUBDIR+=	ruby-ncurses
 SUBDIR+=	ruby-needle
 SUBDIR+=	ruby-ole
+SUBIDR+=	ruby-open4
 SUBDIR+=	ruby-parseconfig
 SUBDIR+=	ruby-parser
 SUBDIR+=	ruby-parsetree
@@ -1471,6 +1474,7 @@ SUBDIR+=	ruby-simple_uuid
 SUBDIR+=	ruby-simplecov
 SUBDIR+=	ruby-simplecov-html
 SUBDIR+=	ruby-spruz
+SUBDIR+=	ruby-stomp
 SUBDIR+=	ruby-stream
 SUBDIR+=	ruby-subexec
 SUBDIR+=	ruby-subversion

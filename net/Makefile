@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.922 2012/07/20 03:16:20 agc Exp $
+# $NetBSD: Makefile,v 1.925 2012/08/12 16:14:11 imil Exp $
 #
 
 COMMENT=	Networking tools
@@ -548,6 +548,7 @@ SUBDIR+=	ruby-netaddr
 SUBDIR+=	ruby-rubytter
 SUBDIR+=	ruby-snmp
 SUBDIR+=	ruby-soap4r
+SUBDIR+=	ruby-stompserver
 SUBDIR+=	ruby-tweetstream
 SUBDIR+=	ruby-twitter-stream
 SUBDIR+=	samba
@@ -659,6 +660,7 @@ SUBDIR+=	walker
 SUBDIR+=	wap-utils
 SUBDIR+=	waste
 SUBDIR+=	wget
+SUBDIR+=	wgetpaste
 SUBDIR+=	whatmask
 SUBDIR+=	whois3
 SUBDIR+=	whoson
@@ -694,5 +696,6 @@ SUBDIR+=	youtube-dl
 SUBDIR+=	ytalk
 SUBDIR+=	ywho
 SUBDIR+=	zeromq
+SUBDIR+=	zsync
 
 .include "../mk/misc/category.mk"
