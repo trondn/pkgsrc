@@ -1,4 +1,4 @@
-$NetBSD: TODO,v 1.11433 2012/08/12 21:30:41 wiz Exp $
+$NetBSD: TODO,v 1.11440 2012/08/14 07:02:19 wiz Exp $
 
 Suggested new packages
 ======================
@@ -416,7 +416,7 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o audacious-plugins-2.4.4
 	o audacity-2.0
 	o autoconvert-0.3.16
-	o autogen-5.16.1
+	o autogen-5.16.2
 	o avcheck-0.91
 	o avidemux-2.5.6
 	o avl-2.0.2a
@@ -451,7 +451,7 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o cairo-gobject-1.12.2
 	o cal3d-0.11.0
 	o calamaris-2.59
-	o calibre-0.8.61
+	o calibre-0.8.64
 	o calligra-2.4.3 [in wip; koffice successor]
 	o cardboard-schedule-1.14c [at http://www.bright-green.com/downloads/]
 	o catdoc-0.94.3
@@ -471,7 +471,7 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o chktex-1.7.0
 	o chromium-0.9.15
 	o chrony-1.26
-	o cinepaint-1.0
+	o cinepaint-1.3
 	o cint-5.16
 	o cjk-lyx-1.4.4
 	o classpath-0.98
@@ -484,11 +484,12 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o connect-1.96
 	o consolekit-0.4.5
 	o cook-2.31
-	o coreutils-8.17
+	o coreutils-8.18
 	o covered-0.7.9
 	o covered-current-20090802
 	o cpio-2.9
 	o cpmtools-2.6
+	o cppunit-1.13.0
 	o cross-h8300-hms-binutils-2.17
 	o crossfire-client-gtk2-1.60.0
 	o cryptopp-5.6.0
@@ -525,12 +526,12 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o doxygen-1.8.2
 	o dri-7.8.2 [wip]
 	o drivel-3.0.3
-	o dropbear-2012.055
 	o dspam-3.10.0
 	o dvdstyler-2.2
 	o dvtm-0.7 [pkg/46585]
 	o dvtm-0.8
 	o easymenu-0.7.2p1
+	o eboard-1.1.1
 	o echinus-0.4.9
 	o eclipse-3.2.0
 	o ed-1.6
@@ -568,7 +569,6 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o etm-891
 	o ettercap-0.7.4
 	o eukleides-1.5.4
-	o evieext-1.1.1
 	o evince-3.4.0
 	o evolution-3.0.0
 	o evolution-couchdb-0.4.5
@@ -640,6 +640,7 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o gfract-0.33
 	o ghc-7.0.4
 	o ghostscript-9.05 [wip]
+	o ghostscript-9.06
 	o gifsicle-1.48
 	o gkrellm-2.3.5
 	o gkrellm-multiping-2.0.13
@@ -740,7 +741,6 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o httptunnel-3.3
 	o hugin-2011.4.0
 	o hylafax-6.0.5
-	o hypermail-2.3.0 [pkg/46440]
 	o ical-2.3.2
 	o icdprog-0.5
 	o icewm-1.3.7
@@ -812,7 +812,6 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o libcaca-0.99beta18
 	o libcanberra-0.28 [drops support for GNOME2; don't update for now -- wiz]
 	o libcares-1.8.0
-	o libcdio-0.83
 	o libchamplain08-0.12.3
 	o libextractor-0.6.3
 	o libffi-3.0.11
@@ -875,7 +874,6 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o manedit-1.2.1
 	o mantis-1.2.3
 	o matchbox-panel-0.9.3
-	o mathomatic-16.0.2
 	o mawk-1.3.4.20120627
 	o mc-4.8.1.4
 	o mdocml-1.12.1
@@ -994,12 +992,12 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o pcmanfm-0.5.2 [pkg/42451]
 	o pdmenu-1.2.87
 	o pen-0.17.3
-	o perl-5.16.0
+	o perl-5.16.1
 	o pessulus-2.30.3 [GNOME 2.28]
 	o phoon-20050629
 	o photopc-3.05
 	o php-jpgraph-3.0.6
-	o phpmyadmin-3.5.2.1
+	o phpmyadmin-3.5.2.2
 	o picp-0.6.8
 	o pim6dd-20040819a
 	o pim6sd-20040824a
@@ -1017,7 +1015,6 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o polkit-qt-0.103.0
 	o polsms-2.1.0
 	o poppass-4.0.14
-	o poppler-0.20.3
 	o poppy-4.01
 	o posh-0.5.5
 	o postal-0.72
@@ -1246,7 +1243,6 @@ For possible perl packages updates, see http://www.netbsd.org/~wiz/perl.html
 	o wbm-cyrus-imapd-1.6.2
 	o wcalc-2.4
 	o webalizer-2.23.05
-	o webkit-gtk-1.8.2
 	o webmin-1.550 [security] [pkg/45066]
 	o webmin-1.590 [security]
 	o websvn-2.3.2
