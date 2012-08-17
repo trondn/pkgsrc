@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.215 2012/08/13 14:25:40 wiz Exp $
+# $NetBSD: Makefile,v 1.217 2012/08/14 08:46:57 wiz Exp $
 
 DISTNAME=	gimp-2.8.0
 PKGREVISION=	2
