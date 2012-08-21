@@ -1,4 +1,4 @@
-# $NetBSD: bsd.prefs.mk,v 1.324 2012/07/02 15:49:41 jperkin Exp $
+# $NetBSD: bsd.prefs.mk,v 1.327 2012/08/14 17:16:07 asau Exp $
 #
 # This file includes the mk.conf file, which contains the user settings.
 #
@@ -260,13 +260,13 @@ LOWER_OPSYS_VERSUFFIX?=	${OS_VERSION}
 LOWER_VENDOR?=		hp
 
 .elif ${OPSYS} == "SunOS"
+ABI?=			32
 .  if ${MACHINE_ARCH} == "sparc"
 SPARC_TARGET_ARCH?=	sparcv7
 .  elif ${MACHINE_ARCH} == "sun4"
 MACHINE_ARCH=		sparc
 SPARC_TARGET_ARCH?=	sparcv7
 .  elif ${MACHINE_ARCH} == "i86pc" || ${MACHINE_ARCH} == "i86xpv" || ${MACHINE_ARCH} == "i386"
-ABI?=			32
 LOWER_ARCH.32=		i386
 LOWER_ARCH.64=		x86_64
 LOWER_ARCH=		${LOWER_ARCH.${ABI}}
@@ -432,10 +432,10 @@ do-install:
 
 # After 2011Q1, the default is to use DESTDIR.
 USE_DESTDIR?=		yes
-# PKG_DESTDIR_SUPPORT can only be one of "destdir" or "user-destdir".
-PKG_DESTDIR_SUPPORT?=	# empty
+# PKG_DESTDIR_SUPPORT can only be one of "none", "destdir", or "user-destdir".
+PKG_DESTDIR_SUPPORT?=	user-destdir
 
-.if empty(PKG_DESTDIR_SUPPORT) || empty(USE_DESTDIR:M[Yy][Ee][Ss])
+.if ${PKG_DESTDIR_SUPPORT} == "none" || empty(USE_DESTDIR:M[Yy][Ee][Ss])
 .  if empty(USE_DESTDIR:M[Yy][Ee][Ss]) && empty(USE_DESTDIR:M[Nn][Oo])
 PKG_FAIL_REASON+=	"USE_DESTDIR must be either \`\`yes'' or \`\`no''"
 .  endif
@@ -445,12 +445,12 @@ _USE_DESTDIR=		user-destdir
 .elif ${PKG_DESTDIR_SUPPORT} == "destdir"
 _USE_DESTDIR=		destdir
 .else
-PKG_FAIL_REASON+=	"PKG_DESTDIR_SUPPORT must be \`\`destdir'' or \`\`user-destdir''."
+PKG_FAIL_REASON+=	"PKG_DESTDIR_SUPPORT must be \`\`none'', \`\`destdir'', or \`\`user-destdir''."
 .endif
 
 # This stanza serves to warn the user; deciding to not build
 # non-DESTDIR-capable packages when not in DESTDIR mode is above.
-.if empty(PKG_DESTDIR_SUPPORT)
+.if ${PKG_DESTDIR_SUPPORT} == "none"
 WARNINGS+=	"[bsd.prefs.mk] The package ${PKGNAME} is missing DESTDIR support."
 .endif
 

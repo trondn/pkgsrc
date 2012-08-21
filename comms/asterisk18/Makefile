@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.41 2012/07/17 00:29:33 jnemeth Exp $
+# $NetBSD: Makefile,v 1.43 2012/08/19 18:41:10 jnemeth Exp $
 #
 # NOTE: when updating this package, there are two places that sound
 #       tarballs need to be checked
 
-DISTNAME=	asterisk-1.8.14.1
+DISTNAME=	asterisk-1.8.15.0
 DIST_SUBDIR=	${PKGNAME_NOREV}
 DISTFILES=	${DEFAULT_DISTFILES}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -99,6 +99,14 @@ BUILDLINK_TRANSFORM+=	rm:-march=i386
 PLIST_VARS+=	kqueue
 .if exists(/usr/include/sys/event.h)
 PLIST.kqueue=	yes
+.endif
+
+PLIST_VARS+=	mgcp
+# NOSIGPIPE is a temp variable, since PLIST.mgcp MUST remain undefined
+# if the grep fails
+NOSIGPIPE!=	${GREP} SO_NOSIGPIPE /usr/include/sys/socket.h || echo ""
+.if ${NOSIGPIPE} != ""
+PLIST.mgcp= yes
 .endif
 
 .include "options.mk"

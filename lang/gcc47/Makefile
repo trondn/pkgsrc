@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.5 2012/07/23 12:47:55 jperkin Exp $
+# $NetBSD: Makefile,v 1.6 2012/08/20 07:22:09 sbd Exp $
 
 PKGNAME=	${GCC_PKGNAME}-${GCC_DIST_VERSION}
 COMMENT=	The GNU Compiler Collection (GCC)
@@ -11,4 +11,6 @@ META_PACKAGE=	yes
 
 .include "Makefile.common"
 
+.include "../../mk/dlopen.buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

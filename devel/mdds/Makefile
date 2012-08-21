@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.8 2012/07/02 13:37:37 adam Exp $
+# $NetBSD: Makefile,v 1.10 2012/08/15 18:13:38 wiz Exp $
 #
 
-DISTNAME=	mdds_0.5.4
+DISTNAME=	mdds_0.6.0
 PKGNAME=	${DISTNAME:S/_/-/}
 PKGREVISION=	1
 CATEGORIES=	devel
@@ -25,6 +25,7 @@ do-install:
 	for i in ${WRKSRC}/include/mdds/*.*; do \
 		${INSTALL_DATA} $$i ${DESTDIR}${PREFIX}/include/mdds; \
 	done
+	rm -f ${DESTDIR}${PREFIX}/include/mdds/*orig
 	for i in ${WRKSRC}/include/mdds/hash_container/*.*; do \
 		${INSTALL_DATA} $$i \
 			${DESTDIR}${PREFIX}/include/mdds/hash_container; \
