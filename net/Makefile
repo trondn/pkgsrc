@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.929 2012/08/25 13:01:13 christos Exp $
+# $NetBSD: Makefile,v 1.931 2012/09/03 10:09:17 marino Exp $
 #
 
 COMMENT=	Networking tools
@@ -238,6 +238,7 @@ SUBDIR+=	libdmapsharing
 SUBDIR+=	libdnet
 SUBDIR+=	libfetch
 SUBDIR+=	libgdata
+SUBDIR+=	libktorrent
 SUBDIR+=	liblive
 SUBDIR+=	libmms
 SUBDIR+=	libnice
@@ -339,7 +340,6 @@ SUBDIR+=	oidentd
 SUBDIR+=	oinkmaster
 SUBDIR+=	omniNotify
 SUBDIR+=	omniORB
-SUBDIR+=	openafs
 SUBDIR+=	openag
 SUBDIR+=	openh323
 SUBDIR+=	openntpd
