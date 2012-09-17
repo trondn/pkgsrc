@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.20 2012/03/03 00:13:02 wiz Exp $
+# $NetBSD: Makefile,v 1.22 2012/09/15 10:04:32 obache Exp $
 #
 
 DISTNAME=	ptyusart-0.3.2
 PKGNAME=	gpsim-${DISTNAME}
-PKGREVISION=	12
+PKGREVISION=	14
 CATEGORIES=	emulators
 MASTER_SITES=	http://www-asim.lip6.fr/~bouyer/pic/
 

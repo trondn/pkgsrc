@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.3 2012/06/16 04:45:33 markd Exp $
+# $NetBSD: Makefile,v 1.5 2012/09/15 10:05:41 obache Exp $
 
 DISTNAME=	kturtle-${_KDE_VERSION}
+PKGREVISION=	2
 CATEGORIES=	misc
 COMMENT=	KDE educational programming environment
 

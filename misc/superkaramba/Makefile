@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.4 2012/06/16 04:45:35 markd Exp $
+# $NetBSD: Makefile,v 1.6 2012/09/15 10:05:43 obache Exp $
 
 DISTNAME=	superkaramba-${_KDE_VERSION}
+PKGREVISION=	2
 CATEGORIES=	misc
 COMMENT=	KDE desktop widgets
 

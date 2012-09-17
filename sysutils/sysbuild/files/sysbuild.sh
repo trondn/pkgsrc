@@ -32,6 +32,7 @@
 shtk_import cli
 shtk_import config
 shtk_import cvs
+shtk_import list
 shtk_import process
 
 
@@ -46,6 +47,7 @@ SYSBUILD_CONFIG_VARS="BUILD_ROOT BUILD_TARGETS CVSROOT CVSTAG INCREMENTAL_BUILD
 #
 # Can be overriden for test purposes only.
 : ${SYSBUILD_ETCDIR="@SYSBUILD_ETCDIR@"}
+: ${SYSBUILD_SHAREDIR="@SYSBUILD_SHAREDIR@"}
 
 
 # Sets defaults for configuration variables that need a value.
@@ -100,6 +102,27 @@ do_one_build() {
         Xflag="-X$(shtk_config_get XSRCDIR)"
     fi
 
+    local targets=
+    for target in $(shtk_config_get BUILD_TARGETS); do
+        case "${target}" in
+            *:*)
+                local submachine="$(echo "${target}" | cut -d : -f 1)"
+                local subtarget="$(echo "${target}" | cut -d : -f 2-)"
+                if [ "${submachine}" = "${machine}" ]; then
+                    targets="${targets} ${subtarget}"
+                else
+                    # The targets have already been validated, so there is
+                    # nothing to do in this case.
+                    :
+                fi
+                ;;
+
+            *)
+                targets="${targets} ${target}"
+                ;;
+        esac
+    done
+
     ( cd "$(shtk_config_get SRCDIR)" && shtk_process_run ./build.sh \
         -D"${basedir}/destdir" \
         -M"${basedir}/obj" \
@@ -112,7 +135,7 @@ do_one_build() {
         -m"${machine}" \
         ${uflag} \
         ${xflag} \
-        $(shtk_config_get BUILD_TARGETS) )
+        ${targets} )
 }
 
 
@@ -136,11 +159,36 @@ sysbuild_build() {
 
     [ ${#} -eq 0 ] || shtk_config_set BUILD_TARGETS "${*}"
 
+    local machines="$(shtk_config_get MACHINES)"
+
+    # Ensure that the list of targets reference valid machines, if any.
+    local unmatched_targets=
+    for target in $(shtk_config_get BUILD_TARGETS); do
+        case "${target}" in
+            *:*)
+                local submachine="$(echo "${target}" | cut -d : -f 1)"
+                if ! shtk_list_contains "${submachine}" ${machines}; then
+                    if [ -n "${unmatched_targets}" ]; then
+                        unmatched_targets="${unmatched_targets} ${target}"
+                    else
+                        unmatched_targets="${target}"
+                    fi
+                fi
+                ;;
+
+            *)
+                ;;
+        esac
+    done
+    [ -z "${unmatched_targets}" ] || shtk_cli_error \
+        "The '${unmatched_targets}' targets do not match any machine" \
+        "in '${machines}'"
+
     if shtk_config_get_bool UPDATE_SOURCES; then
         sysbuild_fetch
     fi
 
-    for machine in $(shtk_config_get MACHINES); do
+    for machine in ${machines}; do
         do_one_build "${machine}"
     done
 }
@@ -159,6 +207,51 @@ sysbuild_config() {
             echo "${var} is undefined"
         fi
     done
+}
+
+
+# Outputs shell configuration commands.
+#
+# \params ... The options and arguments to the command.
+sysbuild_env() {
+    [ ${#} -lt 2 ] || shtk_cli_usage_error "env takes zero or one arguments"
+
+    local machine=
+    if [ ${#} -eq 1 ]; then
+        machine="${1}"
+    else
+        set -- $(shtk_config_get MACHINES)
+        [ ${#} -eq 1 ] || shtk_cli_usage_error "No machine name provided as" \
+            "an argument and MACHINES contains more than one name"
+        machine="${1}"
+    fi
+
+    local basedir="$(shtk_config_get BUILD_ROOT)/${machine}"
+    local srcdir="$(shtk_config_get SRCDIR)"
+
+    [ -f "${SYSBUILD_SHAREDIR}/env.sh" ] \
+        || shtk_cli_error "Cannot open ${SYSBUILD_SHAREDIR}/env.sh"
+
+    # The semicolon after the sourcing of env.sh is required to get this output
+    # working when passed through eval.  Running eval on the output collapses
+    # everything into a single line, and we need to separate the sourcing of
+    # env.sh from the definition of the global variables.
+    cat <<EOF
+. "${SYSBUILD_SHAREDIR}/env.sh" ;
+PATH="${basedir}/tools/bin:\${PATH}"
+D="${basedir}/destdir"
+O="${basedir}/obj${srcdir}"
+S="${srcdir}"
+T="${basedir}/tools"
+EOF
+
+    if shtk_config_has XSRCDIR; then
+        local xsrcdir="$(shtk_config_get XSRCDIR)"
+        cat <<EOF
+XO="${basedir}/obj${xsrcdir}"
+XS="${xsrcdir}"
+EOF
+    fi
 }
 
 
@@ -247,7 +340,7 @@ sysbuild_main() {
 
     local command="${1}"; shift
     case "${command}" in
-        build|config|fetch)
+        build|config|env|fetch)
             sysbuild_set_defaults
             sysbuild_config_load "${config_name}"
             "sysbuild_${command}" "${@}" || exit_code="${?}"

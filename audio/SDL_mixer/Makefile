@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.45 2012/06/04 09:29:53 wiz Exp $
+# $NetBSD: Makefile,v 1.47 2012/09/15 10:03:30 obache Exp $
 
 DISTNAME=	SDL_mixer-1.2.12
-PKGREVISION=	4
+PKGREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 
@@ -9,8 +9,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_mixer/
 COMMENT=	Multi-channel audio mixer library
 LICENSE=	zlib
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 CONFLICTS=		SDL-mixer-[0-9]*
 

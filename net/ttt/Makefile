@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.21 2010/03/19 15:04:05 joerg Exp $
+# $NetBSD: Makefile,v 1.23 2012/08/27 00:47:25 dholland Exp $
 #
 
 DISTNAME=	ttt-1.8.2
-PKGREVISION=	1
+PKGREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sonycsl.co.jp/pub/kjc/
 
@@ -13,6 +13,8 @@ COMMENT=	Tele Traffic Tapper
 PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-tcl=${BUILDLINK_PREFIX.tcl}
+CONFIGURE_ARGS+=	--with-tk=${BUILDLINK_PREFIX.tk}
 
 INSTALLATION_DIRS+=	bin ${PKGMANDIR}/man1
 INSTALL_TARGET=	install install-man

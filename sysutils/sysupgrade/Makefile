@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.2 2012/08/15 21:21:15 jmmv Exp $
+# $NetBSD: Makefile,v 1.4 2012/09/07 12:48:32 jmmv Exp $
 
-DISTNAME=	sysupgrade-1.1
+DISTNAME=	sysupgrade-1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	# empty
 DISTFILES=	# empty

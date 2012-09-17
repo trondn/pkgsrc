@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.34 2008/10/02 17:40:43 joerg Exp $
+# $NetBSD: Makefile,v 1.37 2012/09/09 19:51:03 dholland Exp $
 #
 
 DISTNAME=		nocol-4.3.1
-PKGREVISION=		5
+PKGREVISION=		7
 CATEGORIES=		net
 MASTER_SITES=	http://www.netplex-tech.com/software/nocol/downloads/
 
@@ -12,6 +12,7 @@ COMMENT=		Extensible network and system monitoring utility
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
+MAKE_JOBS_SAFE=		no
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	./Configure
 CONFIGURE_ARGS+=	< ${WRKSRC}/answers
@@ -26,10 +27,10 @@ OWN_DIRS+=		/var/run/data
 
 DEPENDS+=		tk-Tix-[0-9]*:../../x11/tk-Tix
 
-.include "../../x11/tk-Tix/interpreter.mk"
+.include "../../x11/tk/interpreter.mk"
 
 REPLACE_PERL=		perlnocol/hostmon-osclients/hostmon-client*
-REPLACE_TK_TIX=		tknocol/tkNocol.tix
+REPLACE_WISH=		tknocol/tkNocol.tix
 
 INSTALLATION_DIRS=	share/nocol/gifs
 INSTALL_MAKE_FLAGS+=	ROOTDIR=${DESTDIR}${PREFIX} \

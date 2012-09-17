@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.84 2011/12/06 00:19:24 sbd Exp $
+# $NetBSD: Makefile,v 1.86 2012/09/11 23:04:33 asau Exp $
 #
 
 DISTNAME=	${SCIBASE}-src
-PKGREVISION=	5
+PKGREVISION=	6
 PKGNAME=	${SCIBASE}
 CATEGORIES=	math
 MASTER_SITES=	http://www.scilab.org/download/4.1/
@@ -11,7 +11,6 @@ MAINTAINER=	dmcmahill@NetBSD.org
 HOMEPAGE=	http://www.scilab.org/
 COMMENT=	High-level scientific math programming environment with graphics
 
-PKG_DESTDIR_SUPPORT=	user-destdir
 MAKE_JOBS_SAFE=	no
 
 SCIBASE=	scilab-4.1

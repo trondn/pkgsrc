@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.7 2008/06/20 01:09:08 joerg Exp $
+# $NetBSD: Makefile,v 1.9 2012/08/27 02:10:51 dholland Exp $
 #
 
 DISTNAME=		gnetman-11Feb05
 PKGNAME=		gnetman-20050211
-PKGREVISION=		1
+PKGREVISION=		2
 CATEGORIES=		cad
 MASTER_SITES=		http://www.viasic.com/opensource/
 
@@ -15,6 +15,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_PKGLOCALEDIR=	yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ENV+=		TCL_CONFIG_SH=${BUILDLINK_PREFIX.tcl}/lib/tclConfig.sh
 
 post-extract:
 	${RM} ${WRKSRC}/src/include/tcl.h

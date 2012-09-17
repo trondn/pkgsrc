@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.104 2012/03/03 12:54:16 wiz Exp $
+# $NetBSD: Makefile,v 1.106 2012/09/15 10:04:04 obache Exp $
 
 DISTNAME=	SDL-1.2.15
-PKGREVISION=	3
+PKGREVISION=	4
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.libsdl.org/release/
 
@@ -59,6 +59,8 @@ CONFIGURE_ARGS+=	--disable-x11-shared
 .include "../../x11/libXt/buildlink3.mk"
 .include "../../x11/xextproto/buildlink3.mk"
 .include "../../x11/xproto/buildlink3.mk"
+.else
+CONFIGURE_ARGS+=	--without-x
 .endif
 .include "../../mk/pthread.buildlink3.mk"
 

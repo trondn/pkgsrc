@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.59 2012/08/13 14:25:00 wiz Exp $
+# $NetBSD: Makefile,v 1.62 2012/09/15 10:05:04 obache Exp $
 
-DISTNAME=	librsvg-2.36.1
+DISTNAME=	librsvg-2.36.2
 PKGREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/librsvg/2.36/}

@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.29 2012/06/16 04:45:30 markd Exp $
+# $NetBSD: Makefile,v 1.31 2012/09/15 10:05:02 obache Exp $
 
 DISTNAME=	libkdcraw-${_KDE_VERSION}
+PKGREVISION=	2
 CATEGORIES=	graphics
 COMMENT=	KDE digital camera raw image library wrapper
 

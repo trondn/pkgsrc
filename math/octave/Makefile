@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.101 2012/07/05 19:18:29 asau Exp $
+# $NetBSD: Makefile,v 1.103 2012/09/13 23:39:14 asau Exp $
 
 DISTNAME=	octave-${OCTAVE_VER}
 CATEGORIES=	math
@@ -15,13 +15,11 @@ BUILD_DEPENDS+=	gperf>=2.7:../../devel/gperf
 BUILD_DEPENDS+=	teTeX-[0-9]*:../../print/teTeX
 DEPENDS+=	gnuplot>=3.7:../../graphics/gnuplot
 
-OCTAVE_VER=	3.6.2
+OCTAVE_VER=	3.6.3
 
 .if (${MACHINE_ARCH} == "arm32")
 BROKEN=		Internal compiler error occurs on arm32 (even with gcc-2.95.3)
 .endif
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_GNU_READLINE=	yes
 USE_LIBTOOL=		yes

@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.18 2012/03/03 00:13:15 wiz Exp $
+# $NetBSD: Makefile,v 1.20 2012/09/15 10:04:57 obache Exp $
 
 DISTNAME=	gtkimageview-1.6.4
-PKGREVISION=	9
+PKGREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES= 	http://trac.bjourne.webfactional.com/chrome/common/releases/
 

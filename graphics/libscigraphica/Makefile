@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.23 2012/06/14 07:43:21 sbd Exp $
+# $NetBSD: Makefile,v 1.25 2012/09/15 10:05:04 obache Exp $
 #
 
 DISTNAME=	libscigraphica-2.1.1
-PKGREVISION=	15
+PKGREVISION=	17
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scigraphica/}
 

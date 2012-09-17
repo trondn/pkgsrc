@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.23 2012/07/01 01:32:21 dholland Exp $
+# $NetBSD: Makefile,v 1.25 2012/09/15 10:07:17 obache Exp $
 #
 
 .include "../../x11/wxGTK28/Makefile.common"
 
-PKGREVISION=	17
+PKGREVISION=	19
 
 PKGNAME=		${DISTNAME:S/wxGTK/wxGTK28/}
 COMMENT=		GTK-based implementation of the wxWidgets GUI library

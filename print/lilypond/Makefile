@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.79 2012/03/15 11:53:36 obache Exp $
+# $NetBSD: Makefile,v 1.81 2012/09/15 10:06:11 obache Exp $
 #
 
 DISTNAME=	lilypond-2.14.2
-PKGREVISION=	5
+PKGREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.14/
 

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.326 2012/08/08 20:26:07 asau Exp $
+# $NetBSD: Makefile,v 1.330 2012/09/16 15:14:12 taca Exp $
 #
 
 COMMENT=	Programming languages
@@ -63,8 +63,7 @@ SUBDIR+=	gcc44
 SUBDIR+=	gcc45
 SUBDIR+=	gcc46
 SUBDIR+=	gcc47
-SUBDIR+=	gcc47-compiler
-SUBDIR+=	gcc47-runtime
+SUBDIR+=	gcc47-libs
 SUBDIR+=	gforth
 SUBDIR+=	ghc
 SUBDIR+=	gnat-aux
@@ -167,8 +166,6 @@ SUBDIR+=	ruby-doc-stdlib
 SUBDIR+=	ruby-execjs
 SUBDIR+=	ruby18
 SUBDIR+=	ruby18-base
-SUBDIR+=	ruby19
-SUBDIR+=	ruby19-base
 SUBDIR+=	ruby193
 SUBDIR+=	ruby193-base
 SUBDIR+=	runawk
@@ -203,10 +200,7 @@ SUBDIR+=	tcl-expect
 SUBDIR+=	tcl-itcl
 SUBDIR+=	tcl-itcl-current
 SUBDIR+=	tcl-otcl
-SUBDIR+=	tcl-tclX
 SUBDIR+=	tinyscheme
-SUBDIR+=	tk-expect
-SUBDIR+=	tk-tclX
 SUBDIR+=	twelf
 SUBDIR+=	ucblogo
 SUBDIR+=	umb-scheme

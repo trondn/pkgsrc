@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.632 2012/08/04 14:32:13 drochner Exp $
+# $NetBSD: Makefile,v 1.636 2012/09/16 06:39:22 taca Exp $
 #
 
 COMMENT=	Graphics tools and libraries
@@ -80,6 +80,7 @@ SUBDIR+=	enblend-enfuse
 SUBDIR+=	eog
 SUBDIR+=	eog-plugins
 SUBDIR+=	eog-plugins-map
+SUBDIR+=	eog3
 SUBDIR+=	epeg
 SUBDIR+=	evas
 SUBDIR+=	evas-buffer
@@ -192,6 +193,7 @@ SUBDIR+=	gst-plugins0.10-cairo
 SUBDIR+=	gst-plugins0.10-jpeg
 SUBDIR+=	gst-plugins0.10-png
 SUBDIR+=	gthumb
+SUBDIR+=	gthumb3
 SUBDIR+=	gtkam
 SUBDIR+=	gtkglext
 SUBDIR+=	gtkimageview
@@ -417,6 +419,7 @@ SUBDIR+=	ruby-gnome2-rsvg
 SUBDIR+=	ruby-gnuplot
 SUBDIR+=	ruby-imlib2
 SUBDIR+=	ruby-mini-magick
+SUBDIR+=	ruby-oily_png
 SUBDIR+=	ruby-opengl
 SUBDIR+=	ruby-rcairo
 SUBDIR+=	s10sh

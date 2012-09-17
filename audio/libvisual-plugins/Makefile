@@ -1,16 +1,14 @@
-# $NetBSD: Makefile,v 1.31 2012/03/03 00:12:41 wiz Exp $
+# $NetBSD: Makefile,v 1.34 2012/09/15 10:03:40 obache Exp $
 #
 
 DISTNAME=		libvisual-plugins-0.4.0
-PKGREVISION=		12
+PKGREVISION=		14
 CATEGORIES=		audio graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libvisual/}
 
 MAINTAINER=		pkgsrc-users@NetBSD.org
 HOMEPAGE=		http://localhost.nl/~synap/libvisual-wiki/
 COMMENT=		Plugins for libvisual
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 CONFLICTS=		libvisual-nebulus-[0-9]* libvisual-gforce-[0-9]*
 

@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.14 2012/06/14 07:45:12 sbd Exp $
+# $NetBSD: Makefile,v 1.16 2012/09/15 10:04:39 obache Exp $
 #
 
 DISTNAME=	gnome-mastermind-0.3.1
-PKGREVISION=	10
+PKGREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/gnome-mastermind/
 EXTRACT_SUFX=	.tar.bz2

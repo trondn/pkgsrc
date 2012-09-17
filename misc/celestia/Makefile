@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.37 2012/07/01 19:05:20 dholland Exp $
+# $NetBSD: Makefile,v 1.39 2012/09/15 10:05:35 obache Exp $
 
 DISTNAME=	celestia-1.4.1
-PKGREVISION=	22
+PKGREVISION=	24
 CATEGORIES=	misc x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=celestia/}
 

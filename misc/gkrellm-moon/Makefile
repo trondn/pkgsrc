@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.32 2012/03/03 00:13:34 wiz Exp $
+# $NetBSD: Makefile,v 1.34 2012/09/15 10:05:35 obache Exp $
 #
 
 DISTNAME=		gkrellmoon-0.6
 PKGNAME=		gkrellm-moon-0.6
-PKGREVISION=		16
+PKGREVISION=		18
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gkrellmoon/}
 

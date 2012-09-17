@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.35 2012/08/13 14:25:39 wiz Exp $
+# $NetBSD: Makefile,v 1.37 2012/09/15 10:04:39 obache Exp $
 
 DISTNAME=	gcompris-12.01
-PKGREVISION=	4
+PKGREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gcompris/}
 
