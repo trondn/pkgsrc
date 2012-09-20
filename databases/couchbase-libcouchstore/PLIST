@@ -1,0 +1,15 @@
+bin/couch_compact
+bin/couch_dbdump
+bin/couch_dbinfo
+include/libcouchstore/couch_common.h
+include/libcouchstore/couch_db.h
+include/libcouchstore/error.h
+include/libcouchstore/file_ops.h
+include/libcouchstore/visibility.h
+lib/libcouchstore.a
+lib/libcouchstore.la
+lib/libcouchstore.so
+lib/libcouchstore.so.1
+lib/libcouchstore.so.1.0.0
+lib/pkgconfig/libcouchstore.pc
+lib/python/couchstore.py

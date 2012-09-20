@@ -1,0 +1,9 @@
+include/libconflate/alarm.h
+include/libconflate/conflate.h
+include/libconflate/visibility.h
+lib/libconflate.a
+lib/libconflate.la
+lib/libconflate.so
+lib/libconflate.so.0
+lib/libconflate.so.0.0.0
+lib/pkgconfig/libconflate.pc
