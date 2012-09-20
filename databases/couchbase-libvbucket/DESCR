@@ -1,0 +1,2 @@
+libvbucket is an internal part of the Couchbase server. It is used
+to map between virtual buckets and their physical node
